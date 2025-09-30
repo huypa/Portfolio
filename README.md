@@ -3,7 +3,7 @@
 <h2>👨‍💻 Data Analysis Projects:</h2>
 
 - <b>Data Wranngling for semi-structured data</b>
-  - [Praciting Text processing in Python]([https://github.com/joshmadakor1/Algorithms-Practice](https://github.com/huypa/Portfolio-Data-Wrangling/blob/main/README.md))
+  - [Practicing Text Processing in Python](https://github.com/huypa/Portfolio-Data-Wrangling/blob/main/README.md)
 - <b>Full Stack Web App (React, NodeJS, Azure, and Machine Learning Components)</b>
   - [Image Analysis Middleware](https://github.com/joshmadakor1/4chan-Image-Analysis-Middleware-C964) <b><i>(Potentially NSFW)</b></i>
 - <b>PowerShell</b>
