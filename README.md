@@ -1,5 +1,5 @@
-<h1>Hi, I'm Lou Phung! <br/><a href="https://github.com/huypa/Portfolio">Programmer</a>, <a href="https://www.linkedin.com/in/anh-huy-phung-a16503212/">Data Analyst</a>
-
+<h1>G'day, I'm Lou Phung! <br/><a href="https://github.com/huypa/Portfolio">Programmer</a>, <a href="https://www.linkedin.com/in/anh-huy-phung-a16503212/">Data Analyst</a>
+I'm a data analyst passionate abut building data models, create insightful visualizations for business and user-focused applications. I love solving problems with systematic thinking, experiment new tools and contribute to projects that make real impact on the community.
 <h2>👨‍💻 Data Analysis Projects:</h2>
 
 - <b>Data Wranngling for semi-structured data</b>
