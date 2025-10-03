@@ -26,8 +26,7 @@ experimenting with new tools, and contributing to projects that make a real impa
 <h2> 🤳 Connect with me:</h2>
 
 <a href="https://www.linkedin.com/in/anh-huy-phung-a16503212/" target="_blank">
-  <img align="left" alt="Anh Huy Phung | LinkedIn" width="22px" 
-       src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />
+  <img align="left" alt="Anh Huy Phung | LinkedIn" width="30px"
+       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"/>
 </a>
-
 
