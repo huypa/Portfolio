@@ -3,9 +3,9 @@ I'm a data analyst passionate abut building data models, create insightful visua
 <h2>👨‍💻 Data Analysis Projects:</h2>
 
 - <b>Data Wranngling for semi-structured data</b>
-  - [Practicing Text Processing in Python](https://github.com/huypa/Portfolio-Data-Wrangling/blob/main/README.md)
+  - [Data Wranngling for semi-structured data](https://github.com/huypa/Portfolio-Data-Wrangling/blob/main/README.md) Developed a text data wrangling and pre-processing pipeline to transform semi-structured XML records and unstructured YouTube comments into structured datasets for database integration and NLP tasks. Implemented regex-based parsing, text cleaning, tokenisation, stemming, and feature engineering to generate JSON outputs, vocabularies, and count vectors with a score of 99/100 from tutor.
 - <b>Data processing for big data</b>
-  - [Image Analysis Middleware](https://github.com/huypa/Portfolio-Big-Data-Processing) <b><i>(Potentially NSFW)</b></i>
+  - [Data processing for big data](https://github.com/huypa/Portfolio-Big-Data-Processing) <b><i>(Potentially NSFW)</b></i> Built a scalable fraud detection system combining Apache Kafka, PySpark Structured Streaming, and ML. In Part A, developed fraud prediction models (GBT, RF) with AUC > 0.9 and profiled fraudster behaviour using K-Means. In Part B, deployed the model in real time with Kafka–Spark pipelines, producing fraud alerts, product insights, and live dashboards. Delivered an end-to-end prototype integrating big data processing, streaming, and applied machine learning.
 - <b>Data Visualization</b>
   - [Windows EventLog: Failed RDP Logins Source IP to full GeoData Conversion](https://github.com/joshmadakor1/Sentinel-Lab)
 
