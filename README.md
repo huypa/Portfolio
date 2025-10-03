@@ -5,9 +5,9 @@
 
 <h2>👋 Introduction</h2>
 <p>
-I'm a data analyst passionate about building data models and creating insightful visualizations 
+I'm a data analyst passionate about building data models, creating insightful visualizations 
 for business and user-focused applications. I enjoy solving problems through systematic thinking, 
-experimenting with new tools, and contributing to projects that make a real impact on the community.
+experimenting with new tools, and contributing to projects that make a real impact on communities.
 </p>
 
 <h2>👨‍💻 Data Analysis Projects:</h2>
