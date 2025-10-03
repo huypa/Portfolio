@@ -26,7 +26,17 @@ experimenting with new tools, and contributing to projects that make a real impa
 <h2> 🤳 Connect with me:</h2>
 
 <a href="https://www.linkedin.com/in/anh-huy-phung-a16503212/" target="_blank">
-  <img align="left" alt="Anh Huy Phung | LinkedIn" width="30px"
+  <img align="left" alt="LinkedIn" width="30px" 
        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"/>
+</a>
+
+<a href="mailto:your_email@example.com" target="_blank">
+  <img align="left" alt="Email" width="30px" 
+       src="https://cdn-icons-png.flaticon.com/512/732/732200.png"/>
+</a>
+
+<a href="https://your-cv-link.com" target="_blank">
+  <img align="left" alt="CV" width="30px" 
+       src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"/>
 </a>
 
