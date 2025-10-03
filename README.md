@@ -21,7 +21,7 @@ experimenting with new tools, and contributing to projects that make a real impa
   - [Data analytics for semi-structured data](https://github.com/huypa/Portfolio-Data-analytics-for-semi-structured-data/tree/main): Built text classifiers (Logistic Regression, RNN) and LDA topic models on arXiv papers, comparing abstracts vs. titles and uncovering key themes like neural networks, HCI, and reinforcement learning.
   - 
 - <b>Data Visualization</b>
-  - [Windows EventLog: Failed RDP Logins Source IP to full GeoData Conversion](https://github.com/huypa/Portfolio-Data-analytics-for-semi-structured-data/tree/main)
+  - [PowerBI coffee dashboard](https://github.com/huypa/Portfolio-Power-BI-Coffee-Dashboard/blob/main/README.md): Designed and developed a Power BI dashboard by processing transactional sales data and transforming it into clear, insightful visualizations. Focused on choosing effective chart types, applying filters for flexible analysis, and creating a clean visual theme to support data-driven decision making.
 
 <h2> 🤳 Connect with me:</h2>
 
