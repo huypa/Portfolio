@@ -25,7 +25,7 @@ that create positive, real-world impact.
     and unstructured YouTube comments into structured datasets for database integration and NLP tasks. 
     Implemented regex-based parsing, text cleaning, tokenization, stemming, and feature engineering 
     to generate JSON outputs, vocabularies, and count vectors. <br/>
-    <i>Result:</i> Achieved a <b>99/100</b> score for accuracy and code quality.
+    <i><b>Result:</b></i> Achieved a <b>99/100</b> score for accuracy and code quality.
   </li>
   <br/>
   <li>
@@ -37,7 +37,7 @@ that create positive, real-world impact.
       <li><b>Part A:</b> Developed GBT & RF fraud prediction models (AUC > 0.9) and profiled fraudster behaviour using K-Means.</li>
       <li><b>Part B:</b> Deployed models in real time using Kafka–Spark pipelines to generate live fraud alerts and product insights.</li>
     </ul>
-    Delivered an end-to-end prototype integrating big data processing, real-time streaming, and applied ML.
+    <i><b>Result:</b></i> Delivered an end-to-end prototype integrating big data processing, real-time streaming, and applied ML.
   </li>
   <br/>
   <li>
