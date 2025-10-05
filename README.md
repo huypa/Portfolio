@@ -1,4 +1,4 @@
-<h1 align="center">G'day, I'm Lou Phung! 👋<br/>
+<h1 align="left">G'day, I'm Lou Phung! 👋<br/>
 <a href="https://github.com/huypa/Portfolio">Programmer</a> · 
 <a href="https://www.linkedin.com/in/anh-huy-phung-a16503212/">Data Analyst</a>
 </h1>
