@@ -37,7 +37,7 @@ that create positive, real-world impact.
       <li><b>Part A:</b> Developed GBT & RF fraud prediction models (AUC > 0.9) and profiled fraudster behaviour using K-Means.</li>
       <li><b>Part B:</b> Deployed models in real time using Kafka–Spark pipelines to generate live fraud alerts and product insights.</li>
     </ul>
-    <i><b>Result:</b></i> Delivered an end-to-end prototype integrating big data processing, real-time streaming, and applied ML.
+    <i><b>Result:</b></i> Delivered an end-to-end prototype integrating big data processing, real-time streaming, and applied machine learning.
   </li>
   <br/>
   <li>
