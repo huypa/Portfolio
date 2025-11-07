@@ -47,16 +47,27 @@ that create positive, real-world impact.
     comparing abstracts vs. titles to uncover themes in Machine Learning, HCI, and Reinforcement Learning.
   </li>
   <br/>
-  <li>
-    <b>Data Visualization</b><br/>
-  
-    <a href="https://github.com/huypa/Portfolio-Power-BI-Coffee-Dashboard/blob/main/README.md">📊 Power BI Coffee Dashboard</a><br/>
-    Designed and developed a <b>Power BI dashboard</b> using transactional coffee sales data to uncover performance trends. Focused on effective chart selection, dynamic DAX measures, and flexible filters for analysis, presented with a clean, coffee-inspired theme to support data-driven decision-making.<br/><br/>
-  
-    <a href="https://github.com/huypa/Portfolio-Power-BI-Pizza-Dashboard/tree/main">🍕 Power BI Pizza Dashboard</a><br/>
-    An interactive <b>Power BI dashboard</b> built from pizza transactional data to visualize sales across categories, products, and ingredients. It leverages <b>dynamic DAX measures</b> for metric selection, <b>percentile-based order interval analysis</b>, and <b>flexible top/bottom rankings</b>. The dashboard applies clean color contrasts, intuitive slicers, and interactive charts to highlight key business insights and sales trends.
-  </li>
-
+<li>
+  <b>Data Visualization</b>
+  <ul>
+    <li>
+      <b>Power BI Coffee Dashboard</b><br/>
+      <a href="https://github.com/huypa/Portfolio-Power-BI-Coffee-Dashboard/blob/main/README.md">📂 View Project</a><br/>
+      Designed and developed a <b>Power BI dashboard</b> using transactional coffee sales data to uncover performance trends. 
+      Focused on effective chart selection, dynamic <b>DAX</b> measures, and flexible filters for analysis, presented with a clean, coffee-inspired theme to support data-driven decision-making.<br/>
+      <i><b>Result:</b></i> Delivered an interactive dashboard enabling performance analysis and data-driven insights.
+    </li>
+    <br/>
+    <li>
+      <b>Power BI Pizza Dashboard</b><br/>
+      <a href="https://github.com/huypa/Portfolio-Power-BI-Pizza-Dashboard/tree/main">📂 View Project</a><br/>
+      Built an interactive <b>Power BI dashboard</b> from pizza transactional data to visualize sales across categories, products, and ingredients. 
+      Leveraged <b>dynamic DAX measures</b> for metric selection, <b>percentile-based order interval analysis</b>, and <b>flexible top/bottom rankings</b>. 
+      Applied clean color contrasts, intuitive slicers, and interactive charts to highlight key business insights.<br/>
+      <i><b>Result:</b></i> Created a comprehensive analytics solution revealing sales trends and business performance patterns.
+    </li>
+  </ul>
+</li>
 </ul>
 
 ---
