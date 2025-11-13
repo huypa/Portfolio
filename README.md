@@ -1,100 +1,104 @@
-<h1 align="left">G'day, I'm Lou Phung! 👋<br/>
-<a href="https://github.com/huypa/Portfolio">Programmer</a> · 
-<a href="https://www.linkedin.com/in/anh-huy-phung-a16503212/">Data Analyst</a>
-</h1>
+# 👋 G'day, I'm Lou Phung!
+
+**Data Analyst** | **Programmer** | Transforming Data into Impact
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/anh-huy-phung-a16503212/)
+[![Email](https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:huyphung.work@gmail.com)
+[![Resume](https://img.shields.io/badge/Resume-View-4285F4?style=for-the-badge&logo=google-drive&logoColor=white)](https://drive.google.com/drive/u/1/folders/1BhusqZUTWcGH5zpAnNsFUUGvlaTc3eC3)
+
+
+
+## 🚀 About Me
+
+I'm a **Data Analyst** passionate about transforming raw data into meaningful insights. I enjoy building robust data models, designing clear visualizations, and solving complex problems through analytical thinking and experimentation. My goal is to contribute to data-driven projects that create positive, real-world impact.
 
 ---
 
-<h2>👋 Introduction</h2>
-<p>
-I'm a <b>Data Analyst</b> passionate about transforming raw data into meaningful insights. 
-I enjoy building robust data models, designing clear visualizations, and solving complex problems 
-through analytical thinking and experimentation. My goal is to contribute to data-driven projects 
-that create positive, real-world impact.
-</p>
+## 💼 Featured Projects
+
+### 📊 Data Wrangling for Semi-Structured Data
+[![View Project](https://img.shields.io/badge/View-Project-success?style=flat-square&logo=github)](https://github.com/huypa/Portfolio-Data-Wrangling/blob/main/README.md)
+
+Developed a comprehensive text data wrangling and pre-processing pipeline to transform semi-structured XML records and unstructured YouTube comments into structured datasets for database integration and NLP tasks.
+
+**Key Features:**
+- Regex-based parsing and text cleaning
+- Tokenization, stemming, and feature engineering
+- JSON outputs with vocabularies and count vectors
+
+**📈 Result:** Achieved **99/100** score for accuracy and code quality
+
+### 🔍 Data Processing for Big Data
+[![View Project](https://img.shields.io/badge/View-Project-success?style=flat-square&logo=github)](https://github.com/huypa/Portfolio-Big-Data-Processing)
+
+Built a scalable fraud detection system combining **Apache Kafka**, **PySpark Structured Streaming**, and **Machine Learning** for real-time fraud prevention.
+
+**Part A - Model Development:**
+- Developed GBT & RF fraud prediction models (AUC > 0.9)
+- Profiled fraudster behaviour using K-Means clustering
+
+**Part B - Real-Time Deployment:**
+- Deployed models using Kafka–Spark pipelines
+- Generated live fraud alerts and product insights
+
+**📈 Result:** End-to-end prototype integrating big data processing, real-time streaming, and applied ML
+
+### 🤖 Data Analytics for Semi-Structured Data
+[![View Project](https://img.shields.io/badge/View-Project-success?style=flat-square&logo=github)](https://github.com/huypa/Portfolio-Data-analytics-for-semi-structured-data/tree/main)
+
+Built text classifiers and topic models on arXiv papers to uncover themes in Machine Learning, HCI, and Reinforcement Learning.
+
+**Technologies Used:**
+- **Logistic Regression** and **RNN** classifiers
+- **LDA Topic Modeling**
+- Comparative analysis of abstracts vs. titles
 
 ---
 
-<h2>👨‍💻 Featured Data Projects</h2>
+### 📈 Data Visualization Projects
 
-<ul>
-  <li>
-    <b>Data Wrangling for Semi-Structured Data</b><br/>
-    <a href="https://github.com/huypa/Portfolio-Data-Wrangling/blob/main/README.md">📂 View Project</a><br/>
-    Developed a text data wrangling and pre-processing pipeline to transform semi-structured XML records 
-    and unstructured YouTube comments into structured datasets for database integration and NLP tasks. 
-    Implemented regex-based parsing, text cleaning, tokenization, stemming, and feature engineering 
-    to generate JSON outputs, vocabularies, and count vectors. <br/>
-    <i><b>Result:</b></i> Achieved a <b>99/100</b> score for accuracy and code quality.
-  </li>
-  <br/>
-  <li>
-    <b>Data Processing for Big Data</b><br/>
-    <a href="https://github.com/huypa/Portfolio-Big-Data-Processing">📂 View Project</a><br/>
-    Built a scalable fraud detection system combining <b>Apache Kafka</b>, <b>PySpark Structured Streaming</b>, 
-    and <b>Machine Learning</b>. 
-    <ul>
-      <li><b>Part A:</b> Developed GBT & RF fraud prediction models (AUC > 0.9) and profiled fraudster behaviour using K-Means.</li>
-      <li><b>Part B:</b> Deployed models in real time using Kafka–Spark pipelines to generate live fraud alerts and product insights.</li>
-    </ul>
-    <i><b>Result:</b></i> Delivered an end-to-end prototype integrating big data processing, real-time streaming, and applied machine learning.
-  </li>
-  <br/>
-  <li>
-    <b>Data Analytics for Semi-Structured Data</b><br/>
-    <a href="https://github.com/huypa/Portfolio-Data-analytics-for-semi-structured-data/tree/main">📂 View Project</a><br/>
-    Built text classifiers (<b>Logistic Regression</b>, <b>RNN</b>) and <b>LDA Topic Models</b> on arXiv papers, 
-    comparing abstracts vs. titles to uncover themes in Machine Learning, HCI, and Reinforcement Learning.
-  </li>
-  <br/>
-<li>
-  <b>Data Visualization</b>
-  <ul>
-    <li>
-      <b>Power BI Coffee Dashboard</b><br/>
-      <a href="https://github.com/huypa/Portfolio-Power-BI-Coffee-Dashboard/blob/main/README.md">📂 View Project</a><br/>
-      Designed and developed a <b>Power BI dashboard</b> using transactional coffee sales data to uncover performance trends. 
-      Focused on effective chart selection, dynamic <b>DAX</b> measures, and flexible filters for analysis, presented with a clean, coffee-inspired theme to support data-driven decision-making.<br/>
-      <i><b>Result:</b></i> Delivered an interactive dashboard enabling performance analysis and data-driven insights.
-    </li>
-    <br/>
-    <li>
-      <b>Power BI Pizza Dashboard</b><br/>
-      <a href="https://github.com/huypa/Portfolio-Power-BI-Pizza-Dashboard/tree/main">📂 View Project</a><br/>
-      Built an interactive <b>Power BI dashboard</b> from pizza transactional data to visualize sales across categories, products, and ingredients. 
-      Leveraged <b>dynamic DAX measures</b> for metric selection, <b>percentile-based order interval analysis</b>, and <b>flexible top/bottom rankings</b>. 
-      Applied clean color contrasts, intuitive slicers, and interactive charts to highlight key business insights.<br/>
-      <i><b>Result:</b></i> Created a comprehensive analytics solution revealing sales trends and business performance patterns.
-    </li>
-  </ul>
-</li>
-</ul>
+#### ☕ Power BI Coffee Dashboard
+[![View Project](https://img.shields.io/badge/View-Project-success?style=flat-square&logo=github)](https://github.com/huypa/Portfolio-Power-BI-Coffee-Dashboard/blob/main/README.md)
+
+Designed an interactive **Power BI dashboard** using transactional coffee sales data to uncover performance trends.
+
+**Highlights:**
+- Dynamic **DAX** measures and flexible filters
+- Clean, coffee-inspired theme
+- Effective chart selection for business insights
+
+**📈 Result:** Interactive dashboard enabling performance analysis and data-driven insights
+
+
+#### 🍕 Power BI Pizza Dashboard
+[![View Project](https://img.shields.io/badge/View-Project-success?style=flat-square&logo=github)](https://github.com/huypa/Portfolio-Power-BI-Pizza-Dashboard/tree/main)
+
+Built a comprehensive **Power BI dashboard** visualizing pizza sales across categories, products, and ingredients.
+
+**Features:**
+- Dynamic DAX measures for metric selection
+- Percentile-based order interval analysis
+- Flexible top/bottom rankings with interactive slicers
+
+**📈 Result:** Comprehensive analytics solution revealing sales trends and performance patterns
 
 ---
 
-<h2>🤝 Connect with Me</h2>
+## 🛠️ Technical Skills
 
-<p>
-  <a href="https://www.linkedin.com/in/anh-huy-phung-a16503212/" target="_blank">
-    <img align="left" alt="LinkedIn" width="30px" 
-         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"/>
-  </a>
-
-  <a href="mailto:huyphung.work@gmail.com" target="_blank">
-    <img align="left" alt="Email" width="30px" 
-         src="https://cdn-icons-png.flaticon.com/512/732/732200.png"/>
-  </a>
-
-  <a href="https://drive.google.com/drive/u/1/folders/1BhusqZUTWcGH5zpAnNsFUUGvlaTc3eC3" target="_blank">
-    <img align="left" alt="CV" width="30px" 
-         src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"/>
-  </a>
-</p>
-
-<br/><br/>
+**Languages:** Python, SQL, DAX  
+**Big Data:** Apache Kafka, PySpark, Structured Streaming  
+**Machine Learning:** Scikit-learn, TensorFlow, Classification, Clustering  
+**Visualization:** Power BI, Matplotlib, Seaborn  
+**Data Processing:** Pandas, NumPy, Regex, XML/JSON  
+**NLP:** Tokenization, Stemming, Topic Modeling (LDA)
 
 ---
 
-<p align="center">
-  <i>“Turning data into stories, and stories into impact.”</i>
-</p>
+<div align="center">
+  
+### *"Turning data into stories, and stories into impact."*
+
+![Profile Views](https://komarev.com/ghpvc/?username=huypa&color=blueviolet&style=flat-square)
+
+</div>
