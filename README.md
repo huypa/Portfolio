@@ -7,16 +7,14 @@
 [![Resume](https://img.shields.io/badge/Resume-View-4285F4?style=for-the-badge&logo=google-drive&logoColor=white)](https://drive.google.com/drive/u/1/folders/1BhusqZUTWcGH5zpAnNsFUUGvlaTc3eC3)
 
 
-
 ## 🚀 About Me
 
 I'm a **Data Analyst** passionate about transforming raw data into meaningful insights. I enjoy building robust data models, designing clear visualizations, and solving complex problems through analytical thinking and experimentation. My goal is to contribute to data-driven projects that create positive, real-world impact.
 
----
 
 ## 💼 Featured Projects
 
-### 📊 Data Wrangling for Semi-Structured Data
+### 1. Data Wrangling for Semi-Structured Data
 [![View Project](https://img.shields.io/badge/View-Project-success?style=flat-square&logo=github)](https://github.com/huypa/Portfolio-Data-Wrangling/blob/main/README.md)
 
 Developed a comprehensive text data wrangling and pre-processing pipeline to transform semi-structured XML records and unstructured YouTube comments into structured datasets for database integration and NLP tasks.
@@ -28,7 +26,7 @@ Developed a comprehensive text data wrangling and pre-processing pipeline to tra
 
 **📈 Result:** Achieved **99/100** score for accuracy and code quality
 
-### 🔍 Data Processing for Big Data
+### 2. Data Processing for Big Data
 [![View Project](https://img.shields.io/badge/View-Project-success?style=flat-square&logo=github)](https://github.com/huypa/Portfolio-Big-Data-Processing)
 
 Built a scalable fraud detection system combining **Apache Kafka**, **PySpark Structured Streaming**, and **Machine Learning** for real-time fraud prevention.
@@ -43,7 +41,7 @@ Built a scalable fraud detection system combining **Apache Kafka**, **PySpark St
 
 **📈 Result:** End-to-end prototype integrating big data processing, real-time streaming, and applied ML
 
-### 🤖 Data Analytics for Semi-Structured Data
+### 3. Data Analytics for Semi-Structured Data
 [![View Project](https://img.shields.io/badge/View-Project-success?style=flat-square&logo=github)](https://github.com/huypa/Portfolio-Data-analytics-for-semi-structured-data/tree/main)
 
 Built text classifiers and topic models on arXiv papers to uncover themes in Machine Learning, HCI, and Reinforcement Learning.
@@ -55,9 +53,9 @@ Built text classifiers and topic models on arXiv papers to uncover themes in Mac
 
 ---
 
-### 📈 Data Visualization Projects
+### 4. Data Visualization Projects
 
-#### ☕ Power BI Coffee Dashboard
+#### 4.1 Power BI Coffee Dashboard
 [![View Project](https://img.shields.io/badge/View-Project-success?style=flat-square&logo=github)](https://github.com/huypa/Portfolio-Power-BI-Coffee-Dashboard/blob/main/README.md)
 
 Designed an interactive **Power BI dashboard** using transactional coffee sales data to uncover performance trends.
@@ -70,7 +68,7 @@ Designed an interactive **Power BI dashboard** using transactional coffee sales 
 **📈 Result:** Interactive dashboard enabling performance analysis and data-driven insights
 
 
-#### 🍕 Power BI Pizza Dashboard
+#### 4.2 Power BI Pizza Dashboard
 [![View Project](https://img.shields.io/badge/View-Project-success?style=flat-square&logo=github)](https://github.com/huypa/Portfolio-Power-BI-Pizza-Dashboard/tree/main)
 
 Built a comprehensive **Power BI dashboard** visualizing pizza sales across categories, products, and ingredients.
@@ -82,7 +80,6 @@ Built a comprehensive **Power BI dashboard** visualizing pizza sales across cate
 
 **📈 Result:** Comprehensive analytics solution revealing sales trends and performance patterns
 
----
 
 ## 🛠️ Technical Skills
 
@@ -93,7 +90,6 @@ Built a comprehensive **Power BI dashboard** visualizing pizza sales across cate
 **Data Processing:** Pandas, NumPy, Regex, XML/JSON  
 **NLP:** Tokenization, Stemming, Topic Modeling (LDA)
 
----
 
 <div align="center">
   
