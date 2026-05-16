@@ -1,0 +1,35 @@
+I. Business Context:
+As a Data Analyst for a pizza manufacturing and distribution company, your task is to analyze a provided dataset and generate insights to improve the business. The dataset includes:
+- Data_pizza.xlsx: Transaction records for the year 2015.
+- Data_dictionary.xlsx: Describes the data fields within the 'Data_pizza' table.
+
+II. Tasks:
+1. KPIs: Create KPI cards displaying the following metrics: Total Revenue, Total Quantity Sold, Total Orders, Average Order Value and Average Pizza per Order (0.5 pts).
+2. Sales Trends and Anomalies
+   a. Analyze and present daily, weekly, and monthly sales trends across 2015 (0.25 pts).
+   b. Identify peak sales periods, patterns, and any seasonal trends (0.25 pts).
+   c. Investigate sales performance by day of the week and time of day (0.25 pts).
+   d. Examine and identify the potential causes behind significant sales spikes or drops on specific dates throughout the year (0.25 pts).
+3. Product Performance Analysis
+   a. Rank pizza categories by total quantity sold and revenue generated (0.25 pts).
+   b. Identify the top 5 and bottom 5 pizzas by both quantity and revenue (0.25 pts).
+4. Size and Ingredient Analysis
+   a. Analyze the relationship between pizza size and sales volume within each category (0.25 pts).
+   b. Identify the most and least popular ingredients for each pizza category based on quantity sold (0.5 pts).
+5. Order and Ingredient Correlations
+   a. Investigate the correlation between total revenue contributed to and total quantity sold by specific ingredients. Use two average reference lines to segment the ingredients into four distinct groups for comparison (0.25 pts).
+   b. Explore the correlation between average pizza prices and total sales volume across categories and include a trend line. (0.25 pts).
+6. Order Frequency and Timing
+   a. Analyze the frequency of single-item vs. multi-item orders (0.5 pts).
+   b. Examine the average time interval in minutes between orders (0.25 pts).
+7. Formatting, Layout, Visual Presentation, and Analysis Documentation (1pt).
+
+III. Deliverables:
+The analysis should be presented in one of the following formats:
+- A single dashboard file (.pbix) that includes visualizations, explanatory analysis and business recommendations.
+- Two separate files: a dashboard file (.pbix) with visualizations and a PDF document detailing the analysis and suggestions.
+Note: 
+- Please do not alter the data source before importing it into Power BI.
+- You are encouraged to add any additional analyses that you believe may be valuable to improve the business.
+
+Good luck!
