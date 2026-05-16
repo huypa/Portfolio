@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(open \"/Users/phunganhhuy/Personal Project/Portfolio Website/layout-preview.html\")",
+      "WebFetch(domain:github.com)"
+    ]
+  }
+}
