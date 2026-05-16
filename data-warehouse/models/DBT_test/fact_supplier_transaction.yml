@@ -1,0 +1,46 @@
+version: 2
+
+models: 
+  - name: fact_supplier_transaction
+#    tests:
+#      - dbt_utils.expression_is_true:
+#          expression: "Unit_price * Quantity = Gross_amount"
+#      - dbt_utils.equal_rowcount:
+#          compare_model: "`vit-lam-data.wide_world_importers.sales__order_lines`"
+
+    columns: 
+      - name: Supplier_name
+        tests: 
+          - not_null
+
+
+      - name: Transaction_type_name
+        tests: 
+          - not_null
+
+
+      - name: Payment_method_name
+        tests: 
+          - not_null
+
+      - name: Payment_method_key
+        tests: 
+          - not_null
+          - relationships: 
+              to: ref('stg_dim_payment_method')
+              field: Payment_method_key
+
+      - name: Transaction_type_key
+        tests: 
+          - not_null
+          - relationships: 
+              to: ref('stg_dim_transaction_types')
+              field: Transaction_type_key
+
+      - name: Supplier_key
+        tests: 
+          - not_null
+          - relationships: 
+              to: ref('dim_supplier')
+              field: Supplier_key
+

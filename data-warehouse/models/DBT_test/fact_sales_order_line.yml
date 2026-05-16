@@ -1,0 +1,47 @@
+version: 2
+
+models: 
+  - name: fact_sales_order_line
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "Unit_price * Quantity = Gross_amount"
+      - dbt_utils.equal_rowcount:
+          compare_model: "`vit-lam-data.wide_world_importers.sales__order_lines`"
+
+    columns: 
+      - name: Sales_order_line_key
+        tests: 
+          - not_null
+          - unique 
+
+      - name: sales_order_line_indicator_key
+        tests: 
+          - not_null
+          - relationships: 
+              to: ref('dim_sales_order_line_indicator')
+              field: sales_order_line_indicator_key
+
+      - name: sales_order_key
+        tests: 
+          - not_null
+          - relationships: 
+              to: ref('stg_fact_sales_order')
+              field: sales_order_key
+
+      - name: order_date
+        tests: 
+          - not_null
+          - dbt_utils.accepted_range: 
+              min_value: "'2013-01-01'"
+              max_value: 'Current_date'
+
+      - name: quantity
+        tests: 
+          - not_null
+          - custom_test_equal_sum: 
+              compare_model: "`vit-lam-data.wide_world_importers.sales__order_lines`"
+              compare_column: "quantity"
+
+
+
+

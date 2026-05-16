@@ -1,0 +1,30 @@
+version: 2
+
+models: 
+  - name: dim_product
+    columns: 
+      - name: Product_key
+        tests: 
+          - not_null
+          - unique 
+
+      - name: Product_name
+        tests: 
+          - not_null
+
+      - name: Brand_name
+        tests: 
+          - not_null
+
+      - name: Size
+        tests: 
+          - not_null
+          
+      - name: Is_chiller_stock
+        tests: 
+          - not_null
+
+      - name: Unit_price
+        tests: 
+          - not_null
+
