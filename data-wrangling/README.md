@@ -1,9 +1,13 @@
 # Text Data Wrangling & NLP Pre-processing
 
+<div align="center">
+
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=white)
 ![NLTK](https://img.shields.io/badge/NLTK-NLP-informational)
 ![Score](https://img.shields.io/badge/Score-99%2F100-brightgreen)
+
+</div>
 
 > 📎 **Deliverables** &nbsp;|&nbsp; [📄 Task 1 Report (PDF)](https://github.com/huypa/Portfolio-Data-Wrangling/blob/main/021_ass1/task1_021.pdf) &nbsp;|&nbsp; [📄 Task 2 Report (PDF)](https://github.com/huypa/Portfolio-Data-Wrangling/blob/main/021_ass1/task2_021.pdf) &nbsp;|&nbsp; [📓 Task 1 Notebook](https://github.com/huypa/Portfolio-Data-Wrangling/blob/main/021_ass1/task1_021.ipynb) &nbsp;|&nbsp; [📓 Task 2 Notebook](https://github.com/huypa/Portfolio-Data-Wrangling/blob/main/021_ass1/task2_021.ipynb)
 
@@ -49,14 +53,18 @@ flowchart LR
 
 ## 4. Tech Stack
 
+<div align="center">
+
 | Tool | Role | Why chosen |
-|---|---|---|
+|:---|:---|:---|
 | Python `re` | Field-level extraction from quasi-XML | No XML library handles malformed quasi-XML; regex gives precise per-field control |
 | `pandas` | Merge, deduplication, CSV export | Standard for tabular transformation with low overhead |
 | `json` | Schema-enforced output serialisation | Lightweight, human-readable, directly ingestible by downstream tools |
 | `langdetect` | Language identification | Prevents non-English noise from entering the NLP vocabulary |
 | NLTK (Porter Stemmer) | Tokenisation, stemming, stopword removal | Mature, reproducible NLP toolkit with well-documented stemming behaviour |
 | Google Colab | Collaborative notebook environment | Zero-setup sharing; both contributors work on the same runtime |
+
+</div>
 
 ---
 
@@ -95,13 +103,41 @@ jupyter notebook task2_021.ipynb
 
 ## 7. Results / Impact
 
+<div align="center">
+
 | Metric | Value |
-|---|---|
+|:---|:---|
 | Assignment score | **99 / 100** |
 | Trademark records parsed | Full JSON output with all required fields from raw quasi-XML |
 | YouTube channels processed | Multiple channels → per-channel sparse count vectors |
 | Vocabulary artefacts | `021_vocab.txt` (unigrams + bigrams) + `021_countvec.txt` (sparse matrix) |
 | Channel stats | `021_channel_list.csv` ready for EDA or ML ingestion |
+
+</div>
+
+**Task 1 — Parsed trademark records (JSON output):**
+
+<div align="center">
+
+<img width="820" height="311" alt="Task 1 output — structured trademark records extracted from quasi-XML" src="https://github.com/user-attachments/assets/48d1e7cd-7e44-4cd3-ae60-5d6ecf9742a2" />
+
+</div>
+
+**Task 2 — NLP pipeline output (count vectors per channel):**
+
+<div align="center">
+
+<img width="480" height="462" alt="Task 2 output — count vectors and vocabulary from YouTube comments" src="https://github.com/user-attachments/assets/ba2ddb14-1a01-44b6-a711-34bec4121391" />
+
+</div>
+
+**Assignment score:**
+
+<div align="center">
+
+<img width="329" height="144" alt="Assignment score — 99/100" src="https://github.com/user-attachments/assets/487eb3de-fb13-4838-a35f-c17e86bced17" />
+
+</div>
 
 ---
 
@@ -115,6 +151,10 @@ jupyter notebook task2_021.ipynb
 
 ## 9. Author
 
-**Anh Huy Phung** — Analytics Engineer & Data Scientist
+<div align="center">
 
-🌐 [Portfolio](https://huyphungportfolio.vercel.app/) · 🐙 [GitHub](https://github.com/huypa) · 💼 [LinkedIn](https://linkedin.com/in/phung-anh-huy)
+Written by **Anh Huy Phung** — Analytics Engineer & Data Scientist
+
+🌐 [Portfolio](https://huyphungportfolio.vercel.app/) · 🐙 [GitHub](https://github.com/huypa) · 💼 [LinkedIn](https://linkedin.com/in/phung-anh-huy) · 📧 [96anhhuyndu1415@gmail.com](mailto:96anhhuyndu1415@gmail.com)
+
+</div>
