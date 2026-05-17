@@ -15,18 +15,24 @@
 
 ## 1. Quick Introduction
 
-This project builds two independent wrangling pipelines for a university assignment scored **99/100**. In Task 1, I parsed a government-formatted quasi-XML trademark file into a structured JSON dataset using only Python regex — no XML library could handle the malformed structure. In Task 2, I transformed multi-channel YouTube comment exports into NLP-ready count vectors, including language filtering, stemming, and vocabulary construction, producing outputs ready for downstream ML classification.
+<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
+This project builds two independent wrangling pipelines for a university assignment scored <strong>99/100</strong>. In Task 1, I parsed a government-formatted quasi-XML trademark file into a structured JSON dataset using only Python regex — no XML library could handle the malformed structure. In Task 2, I transformed multi-channel YouTube comment exports into NLP-ready count vectors, including language filtering, stemming, and vocabulary construction, producing outputs ready for downstream ML classification.
+</p>
 
 ---
 
 ## 2. Problem Statement
 
+<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
 Raw data from external sources rarely arrives in a usable format. This project addresses two concrete scenarios:
+</p>
 
 - **Trademark XML records**: a `.txt` file containing quasi-XML with inconsistent delimiters, nested legal entity blocks, and missing values — standard parsers fail on this format, yet the data must become a clean, query-ready JSON dataset.
 - **YouTube comment exports**: multi-sheet Excel dumps in mixed languages and encodings that must be deduplicated, cleaned, and converted into sparse numerical feature matrices for ML.
 
+<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
 Both tasks mirror what a data engineer encounters in practice: unstructured inputs with no schema guarantees, where every assumption about missing data carries downstream consequences.
+</p>
 
 ---
 
@@ -89,8 +95,6 @@ cd Portfolio-Data-Wrangling/021_ass1
 pip install pandas nltk langdetect
 ```
 
-Open notebooks in order:
-
 ```bash
 # Task 1 — XML to JSON
 jupyter notebook task1_021.ipynb
@@ -143,9 +147,17 @@ jupyter notebook task2_021.ipynb
 
 ## 8. Lessons Learned
 
-1. **Regex over libraries when schema is broken** — standard XML parsers reject non-conformant files; writing targeted per-field patterns was faster to debug and more reliable than forcing a library.
-2. **Pipeline step order changes results** — applying stemming before vs. after stopword removal produces different vocabularies; documenting the order is as critical as the code itself.
-3. **Null handling is a design decision** — every assumption made to fill or drop a missing value shapes downstream analytics; inline documentation prevents silent error compounding.
+<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
+1. <strong>Regex over libraries when schema is broken</strong> — standard XML parsers reject non-conformant files; writing targeted per-field patterns was faster to debug and more reliable than forcing a library.
+</p>
+
+<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
+2. <strong>Pipeline step order changes results</strong> — applying stemming before vs. after stopword removal produces different vocabularies; documenting the order is as critical as the code itself.
+</p>
+
+<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
+3. <strong>Null handling is a design decision</strong> — every assumption made to fill or drop a missing value shapes downstream analytics; inline documentation prevents silent error compounding.
+</p>
 
 ---
 
@@ -153,8 +165,10 @@ jupyter notebook task2_021.ipynb
 
 <div align="center">
 
-Written by **Anh Huy Phung** — Analytics Engineer & Data Scientist
+<p style="font-family: 'Montserrat', sans-serif;">
+Written by <strong>Anh Huy Phung</strong> — Analytics Engineer & Data Scientist
+</p>
 
-🌐 [Portfolio](https://huyphungportfolio.vercel.app/) · 🐙 [GitHub](https://github.com/huypa) · 💼 [LinkedIn](https://linkedin.com/in/phung-anh-huy) · 📧 [96anhhuyndu1415@gmail.com](mailto:96anhhuyndu1415@gmail.com)
+🌐 [Portfolio](https://huyphungportfolio.vercel.app/#) &nbsp;·&nbsp; 🐙 [GitHub](https://github.com/huypa) &nbsp;·&nbsp; 💼 [LinkedIn](https://www.linkedin.com/in/anh-huy-phung-a16503212/?skipRedirect=true) &nbsp;·&nbsp; 📧 [Huyphung.work@gmail.com](mailto:Huyphung.work@gmail.com)
 
 </div>
