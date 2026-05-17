@@ -38,9 +38,9 @@ const projects = [
   { id: 1, title: "Real-Time Fraud Detection System", year: "2025", cats: ["bigdata", "ml"],
     tags: [{ l: "Big Data", c: "blue" }, { l: "Machine Learning", c: "teal" }],
     bullets: [
-      "End-to-end <strong>Kafka–Spark Structured Streaming</strong> pipeline classifying <strong>500–1,000 eCommerce transactions every 5 seconds</strong> with live Parquet persistence",
-      "<strong>GBT classifier (AUC > 0.9)</strong> for live fraud inference; <strong>K-Means clustering</strong> for fraudster behaviour profiling across transaction patterns",
-      "Real-time <strong>fraud dashboards</strong> tracking hotspots, fraud counts, and product trends across the streaming window",
+      "End-to-end <em>Kafka → Spark Structured Streaming</em> pipeline with live Parquet sink — 500–1K transactions classified every 5 sec",
+      "<em>GBT classifier</em> for fraud inference (AUC > 0.9); <em>K-Means clustering</em> for fraudster behaviour profiling via PySpark MLlib",
+      "Real-time dashboards built on the streaming window tracking fraud hotspots, counts, and product trends",
     ],
     results: ["AUC > 0.9", "500–1K tx / 5s", "K-Means profiling"],
     link: "https://github.com/huypa/Portfolio-Big-Data-Processing", lbl: "View on GitHub", ico: "gh",
@@ -49,42 +49,42 @@ const projects = [
   { id: 2, title: "Text Data Wrangling & NLP Pre-processing", year: "2025", cats: ["nlp", "ml"],
     tags: [{ l: "NLP", c: "purple" }, { l: "Machine Learning", c: "teal" }],
     bullets: [
-      "<strong>Regex-only parser</strong> for malformed government XML trademark records — no existing library handles this quasi-XML format",
-      "Full <strong>NLP pre-processing pipeline</strong>: language detection, emoji removal, stemming & vocabulary construction from multi-channel YouTube exports",
-      "ML-ready <strong>sparse count vectors</strong> with bigram feature engineering — scored <strong>99/100</strong>",
+      "<em>Regex-only parser</em> for malformed government XML trademark records — no existing library handles this format",
+      "<em>NLP pipeline</em>: language detection, emoji removal, stemming & vocabulary construction from YouTube exports",
+      "ML-ready <em>sparse count vectors</em> with bigram feature engineering — scored 99/100",
     ],
-    results: ["99 / 100 score", "Regex XML parser", "Count vectors"],
+    results: ["99 / 100 score", "Regex XML parser", "Bigram vectors"],
     link: "https://github.com/huypa/Portfolio-Data-Wrangling", lbl: "View on GitHub", ico: "gh",
     hoverPrimary: { label: "View on GitHub", link: "https://github.com/huypa/Portfolio-Data-Wrangling", ico: "gh" },
     hoverSecondary: null },
   { id: 3, title: "Statistical Machine Learning Suite", year: "2024", cats: ["ml"],
     tags: [{ l: "Machine Learning", c: "teal" }],
     bullets: [
-      "From-scratch implementations: <strong>KNN regression</strong>, <strong>Ridge Regression</strong> (analytical gradient), <strong>generative vs. discriminative classifiers</strong>",
-      "<strong>Hard/Soft-EM document clustering</strong> with log-sum-exp stability; <strong>Autoencoder</strong> self-taught learning & MLP decision boundaries",
-      "<strong>Nested cross-validation</strong> with learning curves for regularisation benchmarking; <strong>PCA visualisation</strong> for high-dimensional data",
+      "From-scratch: <em>KNN regression</em>, <em>Ridge Regression</em> (closed-form gradient), generative vs. discriminative classifiers",
+      "<em>Hard/Soft-EM</em> clustering with log-sum-exp stability; <em>Autoencoder</em> self-taught learning & MLP decision boundaries",
+      "<em>Nested cross-validation</em> with learning curves for regularisation; <em>PCA</em> for high-dimensional visualisation",
     ],
-    results: ["5 algorithms from scratch", "Nested CV", "Numerically stable EM"],
+    results: ["5 algorithms from scratch", "Nested CV", "Stable EM"],
     link: "https://github.com/huypa/Portfolio-Machine-Learning/blob/main/README.md", lbl: "View on GitHub", ico: "gh",
     hoverPrimary: { label: "View on GitHub", link: "https://github.com/huypa/Portfolio-Machine-Learning/blob/main/README.md", ico: "gh" },
     hoverSecondary: null },
   { id: 4, title: "Text Classification & Topic Modelling", year: "2025", cats: ["analytics", "nlp"],
     tags: [{ l: "NLP", c: "purple" }, { l: "Machine Learning", c: "teal" }],
     bullets: [
-      "<strong>Logistic Regression + TF-IDF</strong> on arXiv abstracts: <strong>87.4% accuracy, F1 0.84</strong> — outperformed RNN baseline by 15 percentage points",
-      "<strong>8 classification configurations</strong> benchmarked across input type, algorithm (LR vs. RNN), and dataset scale (1K vs. 20K docs)",
-      "<strong>LDA topic modelling</strong> over 20K bigram documents surfacing <strong>neural networks, RL, adversarial attacks, and HCI</strong> clusters",
+      "<em>Logistic Regression + TF-IDF</em> on arXiv abstracts — 87.4% accuracy, F1 0.84; outperforms RNN baseline by 15 pp",
+      "8 configs benchmarked: algorithm (<em>LR vs. RNN</em>), input type, and dataset scale (1K → 20K docs)",
+      "<em>LDA topic modelling</em> over 20K bigram documents — surfaced 4 distinct CS research clusters",
     ],
-    results: ["87.4% accuracy", "F1 0.84", "20K docs LDA"],
+    results: ["87.4% accuracy", "F1 0.84", "LDA 20K docs"],
     link: "https://github.com/huypa/Portfolio-Data-analytics-for-semi-structured-data/tree/main", lbl: "View on GitHub", ico: "gh",
     hoverPrimary: { label: "View Report (PDF)", link: "https://github.com/huypa/Portfolio/blob/main/semi-structured-data/report_34140298.pdf", ico: "ext" },
     hoverSecondary: { label: "GitHub", link: "https://github.com/huypa/Portfolio-Data-analytics-for-semi-structured-data/tree/main", ico: "gh" } },
   { id: 5, title: "Wide World Importers — Data Warehouse", year: "2025", cats: ["analytics", "bigdata"],
     tags: [{ l: "Analytics Engineering", c: "green" }, { l: "Big Data", c: "blue" }],
     bullets: [
-      "<strong>Kimball dimensional warehouse</strong> on BigQuery — <strong>10 conformed dimensions, 7 fact tables</strong>, and role-playing dimensions",
-      "Modular <strong>3-layer dbt DAG</strong> (staging → dimensional → facts) with <strong>100% documentation coverage</strong> via dbt docs",
-      "Full automated test suite: <strong>PK uniqueness, FK integrity, accepted values</strong>, and custom business rules",
+      "<em>Kimball dimensional model</em> on BigQuery — 10 conformed dims, 7 fact tables, role-playing dimensions",
+      "Modular <em>3-layer dbt DAG</em> (staging → dimensional → facts) with 100% documentation coverage",
+      "<em>dbt test suite</em>: PK uniqueness, FK integrity, accepted values, and custom business rule checks",
     ],
     results: ["17+ dbt models", "100% doc coverage", "7 fact tables"],
     link: "https://github.com/huypa/Portfolio", lbl: "View on GitHub", ico: "gh",
@@ -93,22 +93,22 @@ const projects = [
   { id: 6, title: "Power BI — Coffee Shop Dashboard", year: "2024", cats: ["bi"],
     tags: [{ l: "Business Intelligence", c: "orange" }],
     bullets: [
-      "<strong>Snowflake schema</strong> across <strong>3 NYC locations</strong> with <strong>dynamic KPI switching</strong> via Parameter Table — Revenue, Quantity & Transactions",
-      "All major KPIs up <strong>22–23% in March</strong>; identified <strong>weekday commuter traffic</strong> as the primary revenue driver",
-      "<strong>Period-over-period trend line</strong>, store share indicators & product rankings filterable by month and store",
+      "<em>Snowflake schema</em> — Transaction fact + 4 dim tables (Product, Type, Location, Date) across 3 NYC stores",
+      "<em>Parameter Table</em> for dynamic KPI switching: Revenue, Quantity Sold, Transaction Count — single-page UX",
+      "<em>DAX</em> period-over-period trend line, store share indicators, and product rankings filterable by month/store",
     ],
-    results: ["+22–23% KPI growth", "3 NYC stores", "Dynamic KPI switch"],
+    results: ["Snowflake schema", "DAX KPI switch"],
     link: "https://app.powerbi.com/view?r=eyJrIjoiNDg2NmI3MDYtOGQxYS00M2RmLTk2YWUtNTFmNTk4OGY0ODIxIiwidCI6IjMyNGViYTBiLTJjNTUtNDE3NS1iMzBjLThjODNlMzZmMTE2ZCJ9", lbl: "View Live Dashboard", ico: "ext",
     hoverPrimary: { label: "View Live Dashboard", link: "https://app.powerbi.com/view?r=eyJrIjoiNDg2NmI3MDYtOGQxYS00M2RmLTk2YWUtNTFmNTk4OGY0ODIxIiwidCI6IjMyNGViYTBiLTJjNTUtNDE3NS1iMzBjLThjODNlMzZmMTE2ZCJ9", ico: "ext" },
     hoverSecondary: { label: "GitHub", link: "https://github.com/huypa/Portfolio-Power-BI-Coffee-Dashboard", ico: "gh" } },
   { id: 7, title: "Power BI — Pizza Sales Dashboard", year: "2024", cats: ["bi"],
     tags: [{ l: "Business Intelligence", c: "orange" }],
     bullets: [
-      "<strong>Percentile order interval analysis</strong> (P25–P90) via <strong>DAX window functions</strong> — <strong>75% of orders completed within 16 minutes</strong>",
-      "<strong>Dynamic KPI switcher</strong> toggles Revenue, Orders, Quantity, AOV & Avg Pizza/Order across all visuals simultaneously",
-      "<strong>Classic & Supreme categories</strong> drive 53% of total revenue; consistent <strong>$15K–$17K weekly revenue</strong>",
+      "<em>DAX window functions</em> — P25/P50/P75/P90 order interval analysis across the full transaction dataset",
+      "<em>Parameter Table</em> KPI switcher: Revenue, Orders, Quantity, AOV, Avg Pizza/Order — no page navigation needed",
+      "<em>Time-intelligence DAX</em> — weekly revenue trend, category ranking, and pizza size breakdown visuals",
     ],
-    results: ["$15K–17K / week", "P75 = 16 min", "53% top-2 category"],
+    results: ["DAX window funcs", "5 KPI metrics"],
     link: "https://app.powerbi.com/view?r=eyJrIjoiODkwNzMwOTQtMzVjYi00NjM0LWE0MGMtZWQ0NjE2NTIyZDliIiwidCI6IjMyNGViYTBiLTJjNTUtNDE3NS1iMzBjLThjODNlMzZmMTE2ZCJ9", lbl: "View Live Dashboard", ico: "ext",
     hoverPrimary: { label: "View Live Dashboard", link: "https://app.powerbi.com/view?r=eyJrIjoiODkwNzMwOTQtMzVjYi00NjM0LWE0MGMtZWQ0NjE2NTIyZDliIiwidCI6IjMyNGViYTBiLTJjNTUtNDE3NS1iMzBjLThjODNlMzZmMTE2ZCJ9", ico: "ext" },
     hoverSecondary: { label: "GitHub", link: "https://github.com/huypa/Portfolio-Power-BI-Pizza-Dashboard", ico: "gh" } },
@@ -161,12 +161,12 @@ function Nav() {
           {["Projects", "Experience", "Education", "Contact"].map(l => (
             <span key={l} onClick={() => scroll(l.toLowerCase())} className={active === l.toLowerCase() ? "nav-active" : ""}>{l}</span>
           ))}
-          <button className="nav-cv">
+          <a href="https://docs.google.com/document/d/1mKLuW7fBP4kyGu5NZ_ImlQghr08fRcEy3JOB2xyKU5E/edit?tab=t.0" target="_blank" rel="noopener noreferrer" className="nav-cv">
             <svg width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M12 15V3m0 12-4-4m4 4 4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17" />
             </svg>
             Download CV
-          </button>
+          </a>
         </div>
       </div>
     </motion.nav>
@@ -256,7 +256,7 @@ function Hero() {
             { href: "mailto:huyphung.work@gmail.com", label: "Mail", icon: <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> },
             { href: "https://www.linkedin.com/in/anh-huy-phung-a16503212/", label: "LinkedIn", icon: <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> },
             { href: "https://github.com/huypa/Portfolio", label: "GitHub", icon: <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg> },
-            { href: "https://calendar.google.com/calendar/u/0/r?authuser=huyphung.work@gmail.com", label: "Book Interview", icon: <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> },
+            { href: "mailto:huyphung.work@gmail.com?subject=Interview%20Request%20%E2%80%94%20Anh%20Huy%20Phung", label: "Book Interview", icon: <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> },
           ].map(({ href, label, icon }) => (
             <a key={label} href={href} target={href.startsWith("mailto") ? "_self" : "_blank"} rel="noopener noreferrer" className="btn-social">
               {icon}{label}
@@ -480,13 +480,13 @@ function Contact() {
             <h2 className="contact-title">Download Resume</h2>
             <p className="contact-desc">Full experience, projects, and education in PDF format.</p>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "8px" }}>
-              <button className="btn-footer btn-footer-light">
+              <a href="https://docs.google.com/document/d/1mKLuW7fBP4kyGu5NZ_ImlQghr08fRcEy3JOB2xyKU5E/edit?tab=t.0" target="_blank" rel="noopener noreferrer" className="btn-footer btn-footer-light">
                 <svg width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path d="M12 15V3m0 12-4-4m4 4 4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17" />
                 </svg>
                 Download CV (PDF)
-              </button>
-              <a href="https://calendar.google.com/calendar/u/0/r?authuser=huyphung.work@gmail.com" target="_blank" rel="noopener noreferrer" className="btn-footer">
+              </a>
+              <a href="mailto:huyphung.work@gmail.com?subject=Interview%20Request%20%E2%80%94%20Anh%20Huy%20Phung" target="_self" rel="noopener noreferrer" className="btn-footer">
                 <svg width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
                 </svg>

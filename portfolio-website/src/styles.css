@@ -268,7 +268,8 @@ nav {
   gap: 6px;
   border: 1px solid var(--border-strong);
   cursor: pointer;
-  transition: background .15s
+  transition: background .15s;
+  text-decoration: none
 }
 
 .nav-cv:hover { background: var(--border) }
@@ -541,9 +542,10 @@ nav {
 }
 
 /* ── KEYWORD HIGHLIGHT IN PROJECT BULLETS ── */
-.project-bullets li strong {
-  color: var(--ink);
-  font-weight: 600;
+.project-bullets li em {
+  font-style: italic;
+  color: var(--subtle);
+  font-weight: 500;
 }
 
 .project-header {
