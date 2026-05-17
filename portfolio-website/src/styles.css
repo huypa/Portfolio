@@ -473,7 +473,77 @@ nav {
   padding: 20px 22px;
   display: flex;
   flex-direction: column;
-  cursor: default
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── CARD HOVER OVERLAY ── */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 15, 15, 0.9);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+  padding: 24px;
+}
+
+.project-card:hover .card-overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.overlay-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 24px;
+  background: #ffffff;
+  color: #0F0F0F;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+}
+
+.overlay-btn-primary:hover { opacity: 0.88; color: #0F0F0F }
+.overlay-btn-primary svg { width: 14px; height: 14px; flex-shrink: 0 }
+
+.overlay-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 18px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 7px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.overlay-btn-secondary:hover {
+  border-color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ── KEYWORD HIGHLIGHT IN PROJECT BULLETS ── */
+.project-bullets li strong {
+  color: var(--ink);
+  font-weight: 600;
 }
 
 .project-header {

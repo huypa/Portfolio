@@ -35,41 +35,83 @@ const techStack = [
 ];
 
 const projects = [
-  { id: 1, title: "eCommerce Fraud Detection System", year: "2025", cats: ["bigdata", "ml"],
+  { id: 1, title: "Real-Time Fraud Detection System", year: "2025", cats: ["bigdata", "ml"],
     tags: [{ l: "Big Data", c: "blue" }, { l: "Machine Learning", c: "teal" }],
-    bullets: ["Engineered a real-time fraud detection platform processing <strong>22M+ records</strong> via PySpark to rapidly detect and flag suspicious transactions", "Containerized solution with Docker for scalable deployment across environments", "Deployed Random Forest, Gradient-Boosted Trees, and K-Means clustering to predict fraud and uncover hidden behavioral patterns"],
-    results: ["22M+ records", "RF + GBT + K-Means", "Docker deployed"],
-    link: "https://github.com/huypa/Portfolio-Big-Data-Processing", lbl: "View on GitHub", ico: "gh" },
-  { id: 2, title: "Text Data Wrangling & Pre-processing", year: "2025", cats: ["nlp", "ml"],
+    bullets: [
+      "End-to-end <strong>Kafka–Spark Structured Streaming</strong> pipeline classifying <strong>500–1,000 eCommerce transactions every 5 seconds</strong> with live Parquet persistence",
+      "<strong>GBT classifier (AUC > 0.9)</strong> for live fraud inference; <strong>K-Means clustering</strong> for fraudster behaviour profiling across transaction patterns",
+      "Real-time <strong>fraud dashboards</strong> tracking hotspots, fraud counts, and product trends across the streaming window",
+    ],
+    results: ["AUC > 0.9", "500–1K tx / 5s", "K-Means profiling"],
+    link: "https://github.com/huypa/Portfolio-Big-Data-Processing", lbl: "View on GitHub", ico: "gh",
+    hoverPrimary: { label: "View on GitHub", link: "https://github.com/huypa/Portfolio-Big-Data-Processing", ico: "gh" },
+    hoverSecondary: null },
+  { id: 2, title: "Text Data Wrangling & NLP Pre-processing", year: "2025", cats: ["nlp", "ml"],
     tags: [{ l: "NLP", c: "purple" }, { l: "Machine Learning", c: "teal" }],
-    bullets: ["Extracted and transformed semi-structured text (XML, YouTube comments) into structured datasets for NLP and database integration", "Applied regex parsing, text cleaning (emoji removal, stemming, language detection), and feature engineering (unigrams, bigrams, count vectors)", "Delivered JSON/CSV outputs ready for downstream modelling pipelines"],
-    results: ["99/100 score", "Semi-structured → structured"],
-    link: "https://github.com/huypa/Portfolio-Data-Wrangling", lbl: "View on GitHub", ico: "gh" },
+    bullets: [
+      "<strong>Regex-only parser</strong> for malformed government XML trademark records — no existing library handles this quasi-XML format",
+      "Full <strong>NLP pre-processing pipeline</strong>: language detection, emoji removal, stemming & vocabulary construction from multi-channel YouTube exports",
+      "ML-ready <strong>sparse count vectors</strong> with bigram feature engineering — scored <strong>99/100</strong>",
+    ],
+    results: ["99 / 100 score", "Regex XML parser", "Count vectors"],
+    link: "https://github.com/huypa/Portfolio-Data-Wrangling", lbl: "View on GitHub", ico: "gh",
+    hoverPrimary: { label: "View on GitHub", link: "https://github.com/huypa/Portfolio-Data-Wrangling", ico: "gh" },
+    hoverSecondary: null },
   { id: 3, title: "Statistical Machine Learning Suite", year: "2024", cats: ["ml"],
     tags: [{ l: "Machine Learning", c: "teal" }],
-    bullets: ["Implemented and evaluated ML models for regression, classification, and unsupervised learning — emphasizing model selection, regularization, and generalization", "Built custom algorithms from scratch: KNN, Ridge Regression, EM, and Neural Networks", "Applied cross-validation, learning curves, and representation learning for rigorous performance benchmarking"],
-    results: ["5 algorithms from scratch", "k-fold cross-validated"],
-    link: "https://github.com/huypa/Portfolio-Machine-Learning/blob/main/README.md", lbl: "View on GitHub", ico: "gh" },
-  { id: 4, title: "Semi-Structured Data Analytics", year: "2024", cats: ["analytics", "nlp"],
-    tags: [{ l: "Analytics Engineering", c: "green" }, { l: "NLP", c: "purple" }],
-    bullets: ["Engineered end-to-end pipelines across three heterogeneous data sources (REST APIs, XML feeds, relational DB) into MongoDB and Neo4j", "Applied graph-based relationship modelling and NLP techniques to extract structured insights from unstructured content", "Designed a robust data quality validation framework delivering actionable outputs from ingestion to insight"],
-    results: ["Top rank in class", "3 heterogeneous sources"],
-    link: "https://github.com/huypa/Portfolio-Data-analytics-for-semi-structured-data/tree/main", lbl: "View on GitHub", ico: "gh" },
+    bullets: [
+      "From-scratch implementations: <strong>KNN regression</strong>, <strong>Ridge Regression</strong> (analytical gradient), <strong>generative vs. discriminative classifiers</strong>",
+      "<strong>Hard/Soft-EM document clustering</strong> with log-sum-exp stability; <strong>Autoencoder</strong> self-taught learning & MLP decision boundaries",
+      "<strong>Nested cross-validation</strong> with learning curves for regularisation benchmarking; <strong>PCA visualisation</strong> for high-dimensional data",
+    ],
+    results: ["5 algorithms from scratch", "Nested CV", "Numerically stable EM"],
+    link: "https://github.com/huypa/Portfolio-Machine-Learning/blob/main/README.md", lbl: "View on GitHub", ico: "gh",
+    hoverPrimary: { label: "View on GitHub", link: "https://github.com/huypa/Portfolio-Machine-Learning/blob/main/README.md", ico: "gh" },
+    hoverSecondary: null },
+  { id: 4, title: "Text Classification & Topic Modelling", year: "2025", cats: ["analytics", "nlp"],
+    tags: [{ l: "NLP", c: "purple" }, { l: "Machine Learning", c: "teal" }],
+    bullets: [
+      "<strong>Logistic Regression + TF-IDF</strong> on arXiv abstracts: <strong>87.4% accuracy, F1 0.84</strong> — outperformed RNN baseline by 15 percentage points",
+      "<strong>8 classification configurations</strong> benchmarked across input type, algorithm (LR vs. RNN), and dataset scale (1K vs. 20K docs)",
+      "<strong>LDA topic modelling</strong> over 20K bigram documents surfacing <strong>neural networks, RL, adversarial attacks, and HCI</strong> clusters",
+    ],
+    results: ["87.4% accuracy", "F1 0.84", "20K docs LDA"],
+    link: "https://github.com/huypa/Portfolio-Data-analytics-for-semi-structured-data/tree/main", lbl: "View on GitHub", ico: "gh",
+    hoverPrimary: { label: "View Report (PDF)", link: "https://github.com/huypa/Portfolio/blob/main/semi-structured-data/report_34140298.pdf", ico: "ext" },
+    hoverSecondary: { label: "GitHub", link: "https://github.com/huypa/Portfolio-Data-analytics-for-semi-structured-data/tree/main", ico: "gh" } },
   { id: 5, title: "Wide World Importers — Data Warehouse", year: "2025", cats: ["analytics", "bigdata"],
     tags: [{ l: "Analytics Engineering", c: "green" }, { l: "Big Data", c: "blue" }],
-    bullets: ["Designed Kimball star schema across Sales, Purchasing, Customers & Suppliers domains in BigQuery", "Built modular dbt staging, intermediate, and mart layers with full lineage documentation", "Standardized metric definitions across business units to ensure a single source of truth"],
-    results: ["4 star schemas", "100% lineage docs"],
-    link: "https://github.com/huypa/Portfolio", lbl: "View on GitHub", ico: "gh" },
+    bullets: [
+      "<strong>Kimball dimensional warehouse</strong> on BigQuery — <strong>10 conformed dimensions, 7 fact tables</strong>, and role-playing dimensions",
+      "Modular <strong>3-layer dbt DAG</strong> (staging → dimensional → facts) with <strong>100% documentation coverage</strong> via dbt docs",
+      "Full automated test suite: <strong>PK uniqueness, FK integrity, accepted values</strong>, and custom business rules",
+    ],
+    results: ["17+ dbt models", "100% doc coverage", "7 fact tables"],
+    link: "https://github.com/huypa/Portfolio", lbl: "View on GitHub", ico: "gh",
+    hoverPrimary: { label: "View on GitHub", link: "https://github.com/huypa/Portfolio", ico: "gh" },
+    hoverSecondary: null },
   { id: 6, title: "Power BI — Coffee Shop Dashboard", year: "2024", cats: ["bi"],
     tags: [{ l: "Business Intelligence", c: "orange" }],
-    bullets: ["Designed snowflake schema across 5 NYC store locations for a unified sales data model", "Built Monday vs weekend and cross-store performance comparisons to surface operational patterns", "Revealed consistent <strong>22–23% MoM revenue growth</strong> trend across all locations"],
-    results: ["+23% MoM revenue", "5 locations"],
-    link: "#", lbl: "View Live Dashboard", ico: "ext" },
+    bullets: [
+      "<strong>Snowflake schema</strong> across <strong>3 NYC locations</strong> with <strong>dynamic KPI switching</strong> via Parameter Table — Revenue, Quantity & Transactions",
+      "All major KPIs up <strong>22–23% in March</strong>; identified <strong>weekday commuter traffic</strong> as the primary revenue driver",
+      "<strong>Period-over-period trend line</strong>, store share indicators & product rankings filterable by month and store",
+    ],
+    results: ["+22–23% KPI growth", "3 NYC stores", "Dynamic KPI switch"],
+    link: "https://app.powerbi.com/view?r=eyJrIjoiNDg2NmI3MDYtOGQxYS00M2RmLTk2YWUtNTFmNTk4OGY0ODIxIiwidCI6IjMyNGViYTBiLTJjNTUtNDE3NS1iMzBjLThjODNlMzZmMTE2ZCJ9", lbl: "View Live Dashboard", ico: "ext",
+    hoverPrimary: { label: "View Live Dashboard", link: "https://app.powerbi.com/view?r=eyJrIjoiNDg2NmI3MDYtOGQxYS00M2RmLTk2YWUtNTFmNTk4OGY0ODIxIiwidCI6IjMyNGViYTBiLTJjNTUtNDE3NS1iMzBjLThjODNlMzZmMTE2ZCJ9", ico: "ext" },
+    hoverSecondary: { label: "GitHub", link: "https://github.com/huypa/Portfolio-Power-BI-Coffee-Dashboard", ico: "gh" } },
   { id: 7, title: "Power BI — Pizza Sales Dashboard", year: "2024", cats: ["bi"],
     tags: [{ l: "Business Intelligence", c: "orange" }],
-    bullets: ["Built dynamic metric switching across Revenue, Orders, Quantity, and AOV using DAX measure selection patterns", "Implemented percentile order analysis (P20–P90) to surface demand distribution insights", "Designed topN pizza ranking by concentration score to guide menu and pricing decisions"],
-    results: ["4 dynamic metrics", "P20–P90 analysis"],
-    link: "#", lbl: "View Live Dashboard", ico: "ext" },
+    bullets: [
+      "<strong>Percentile order interval analysis</strong> (P25–P90) via <strong>DAX window functions</strong> — <strong>75% of orders completed within 16 minutes</strong>",
+      "<strong>Dynamic KPI switcher</strong> toggles Revenue, Orders, Quantity, AOV & Avg Pizza/Order across all visuals simultaneously",
+      "<strong>Classic & Supreme categories</strong> drive 53% of total revenue; consistent <strong>$15K–$17K weekly revenue</strong>",
+    ],
+    results: ["$15K–17K / week", "P75 = 16 min", "53% top-2 category"],
+    link: "https://app.powerbi.com/view?r=eyJrIjoiODkwNzMwOTQtMzVjYi00NjM0LWE0MGMtZWQ0NjE2NTIyZDliIiwidCI6IjMyNGViYTBiLTJjNTUtNDE3NS1iMzBjLThjODNlMzZmMTE2ZCJ9", lbl: "View Live Dashboard", ico: "ext",
+    hoverPrimary: { label: "View Live Dashboard", link: "https://app.powerbi.com/view?r=eyJrIjoiODkwNzMwOTQtMzVjYi00NjM0LWE0MGMtZWQ0NjE2NTIyZDliIiwidCI6IjMyNGViYTBiLTJjNTUtNDE3NS1iMzBjLThjODNlMzZmMTE2ZCJ9", ico: "ext" },
+    hoverSecondary: { label: "GitHub", link: "https://github.com/huypa/Portfolio-Power-BI-Pizza-Dashboard", ico: "gh" } },
 ];
 
 const FILTERS = [
@@ -301,6 +343,17 @@ function Projects() {
                 <a href={p.link} target="_blank" rel="noopener noreferrer">
                   {p.ico === "gh" ? <GithubIcon /> : <ExtIcon />}{p.lbl}
                 </a>
+              </div>
+              <div className="card-overlay">
+                <a href={p.hoverPrimary.link} target="_blank" rel="noopener noreferrer" className="overlay-btn-primary">
+                  {p.hoverPrimary.ico === "gh" ? <GithubIcon /> : <ExtIcon />}
+                  {p.hoverPrimary.label}
+                </a>
+                {p.hoverSecondary && (
+                  <a href={p.hoverSecondary.link} target="_blank" rel="noopener noreferrer" className="overlay-btn-secondary">
+                    {p.hoverSecondary.label}
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}
