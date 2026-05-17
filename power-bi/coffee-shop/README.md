@@ -23,9 +23,10 @@ This project delivers an end-to-end Power BI sales dashboard for a <strong>three
 
 ## 2. Problem Statement
 
-<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-Three geographically separate coffee shops — <strong>Astoria, Hell's Kitchen, and Lower Manhattan</strong> — were generating significant <strong>point-of-sale data</strong> with no unified view of performance. Managers lacked a reliable way to compare store revenue, understand which <strong>product categories</strong> drove sales, or identify whether <strong>weekday commuter traffic</strong> materially differed from weekend walk-ins. Without these answers, <strong>staffing decisions</strong>, <strong>promotional timing</strong>, and <strong>inventory planning</strong> were largely guesswork. This dashboard replaces that guesswork with a <strong>single, always-current source of truth</strong>: revenue, quantity sold, and transaction counts with <strong>period-over-period change indicators</strong>, broken down by store, product type, category, and day-of-week — so every decision is backed by data.
-</p>
+- **Fragmented data**: Three NYC locations (Astoria, Hell's Kitchen, Lower Manhattan) generated POS data with no unified performance view.
+- **Blind spots**: Managers had no reliable way to compare store revenue, identify top product categories, or distinguish weekday commuter traffic from weekend walk-ins.
+- **Guesswork decisions**: Without cross-store visibility, staffing, promotional timing, and inventory planning lacked data backing.
+- **Solution**: A single, always-current dashboard delivering revenue, quantity, and transaction counts with period-over-period indicators — broken down by store, product, and day-of-week.
 
 ---
 
@@ -134,17 +135,9 @@ March results confirmed strong, broad-based growth across all three locations �
 
 ## 8. Lessons Learned
 
-<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>1. Parameter Tables unlock report scalability.</strong> Routing all three KPIs through a single <strong>Parameter Table</strong> rather than duplicating visuals reduced page count dramatically and kept the <strong>user experience</strong> focused. This pattern is now a default in my <strong>BI toolkit</strong> for any multi-metric report.
-</p>
-
-<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>2. Snowflake schemas pay off in DAX simplicity.</strong> Separating <strong>Dim_type</strong> from <strong>Dim_product</strong> added one join but eliminated ambiguous <strong>many-to-many relationships</strong> that would have complicated <strong>time-intelligence calculations</strong>. The upfront modelling cost saved significant debugging time later.
-</p>
-
-<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>3. Design language carries analytical credibility.</strong> Choosing a warm, coffee-inspired palette — <strong>espresso browns, latte beige, cream neutrals</strong> — was not purely aesthetic. Stakeholders responded more positively to a dashboard that felt aligned with the <strong>brand context</strong>, which smoothed the conversation toward the data insights rather than the tool itself.
-</p>
+- **Parameter Tables unlock scalability**: Routing all three KPIs through a single Parameter Table eliminated duplicate visuals and keeps the user experience focused — now a default pattern in my BI toolkit.
+- **Snowflake schemas simplify DAX**: Separating `Dim_type` from `Dim_product` eliminated ambiguous many-to-many relationships, saving significant debugging time on time-intelligence calculations.
+- **Design language builds credibility**: A coffee-inspired palette (espresso browns, latte beige, cream neutrals) made stakeholders more receptive, shifting conversations from the tool to the actual data insights.
 
 ---
 

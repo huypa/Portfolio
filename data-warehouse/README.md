@@ -28,9 +28,10 @@ This project demonstrates a <strong>production-grade data warehouse</strong> wor
 
 ## 2. Problem Statement
 
-<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-Raw transactional data from an <strong>OLTP system</strong> is rarely query-ready for analytics. Tables are <strong>normalized</strong>, joins are deep, and business logic is buried in application code. Without a structured warehouse layer, analysts write <strong>slow, redundant, error-prone SQL</strong> — and no one agrees on what "revenue" or "active customer" means. This project solves that by centralizing <strong>business definitions</strong> in dbt models, enforcing <strong>data contracts</strong> through tests, and exposing clean, <strong>conformed dimensions and facts</strong> that any BI tool can consume directly. The result is a <strong>single source of truth</strong> for <strong>sales, purchasing, supplier, and salesperson performance</strong> across the entire organization.
-</p>
+- **Raw OLTP data is not analytics-ready**: normalized tables, deep joins, and business logic buried in application code make direct querying slow and error-prone.
+- **No shared definitions**: without a warehouse layer, analysts disagree on metrics like "revenue" or "active customer," producing inconsistent reports.
+- **This project's solution**: centralize **business definitions** in dbt models and enforce **data contracts** through automated tests.
+- **Outcome**: a **single source of truth** exposing clean, **conformed dimensions and facts** for sales, purchasing, supplier, and salesperson performance.
 
 ---
 
@@ -135,17 +136,9 @@ After <code>dbt docs serve</code>, open <code>http://localhost:8080</code> to ex
 
 ## 8. Lessons Learned
 
-<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>1. Grain definition is the hardest part of dimensional modeling.</strong> Choosing the <strong>wrong grain</strong> for a fact table — e.g., mixing order-level and line-level measures — causes silent <strong>aggregation errors</strong> downstream. Separating <strong><code>fact_sales_order</code></strong> (<strong>header grain</strong>) from <strong><code>fact_sales_order_line</code></strong> (<strong>line grain</strong>) was a deliberate design decision that paid off in BI query accuracy.
-</p>
-
-<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>2. dbt tests are a contract, not an afterthought.</strong> Running tests late in the project surface <strong>FK mismatches</strong> that traced back to upstream <strong>staging logic</strong>. Embedding tests from the first model onwards — and failing the pipeline on test errors — would have caught these issues earlier and saved significant rework.
-</p>
-
-<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>3. Role-playing dimensions require explicit naming conventions.</strong> Reusing a single <strong><code>dim_date</code></strong> for order date, ship date, and delivery date demands aliased references in fact CTEs. Establishing a clear naming convention (<strong><code>order_date_key</code></strong>, <strong><code>ship_date_key</code></strong>) across all fact tables from the start prevents ambiguity in SQL and in the generated documentation.
-</p>
+- **Grain definition is the hardest part**: mixing order-level and line-level measures in one fact table causes silent aggregation errors — splitting `fact_sales_order` (header grain) from `fact_sales_order_line` (line grain) was essential for BI accuracy.
+- **dbt tests are a contract, not an afterthought**: writing tests late surfaced FK mismatches rooted in staging logic; embedding tests from the first model and failing the pipeline on errors would have prevented significant rework.
+- **Role-playing dimensions need explicit naming conventions**: reusing `dim_date` for order, ship, and delivery dates requires aliased keys (`order_date_key`, `ship_date_key`) defined consistently across all fact tables to eliminate SQL and documentation ambiguity.
 
 ---
 

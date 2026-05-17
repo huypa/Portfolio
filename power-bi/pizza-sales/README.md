@@ -24,9 +24,10 @@ This project delivers an end-to-end Power BI analytics solution for a <strong>pi
 
 ## 2. Problem Statement
 
-<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-Restaurant managers lacked a consolidated view of what was selling, when revenue peaked, and how efficiently orders moved through the kitchen. Reporting was <strong>fragmented across spreadsheets</strong> with no <strong>dynamic filtering or KPI switching</strong>, making it impossible to answer questions like "Which pizza category drives the most revenue on weekdays?" or "What percentage of orders fall outside our target completion window?" Without this visibility, <strong>menu decisions</strong>, <strong>staffing schedules</strong>, and <strong>promotional strategies</strong> were based on intuition rather than data. This dashboard closes that gap by providing a <strong>single source of truth</strong> that updates from source data and gives managers instant answers across all key performance dimensions.
-</p>
+- **Fragmented reporting**: Sales data was scattered across spreadsheets with no dynamic filtering or KPI switching.
+- **Blind spots**: Managers couldn't answer basic questions like which category drives weekday revenue or how many orders miss the target completion window.
+- **Decisions by gut**: Without consolidated visibility, menu changes, staffing schedules, and promotions were driven by intuition rather than data.
+- **Solution**: A single-source dashboard that updates from source data and surfaces answers across all key performance dimensions instantly.
 
 ---
 
@@ -134,17 +135,9 @@ The <strong>data model screenshot</strong> below shows the full relationship map
 
 ## 8. Lessons Learned
 
-<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>1. DAX window functions unlock analytical depth that pre-aggregated tables cannot match.</strong> Building the percentile-based order interval analysis entirely in DAX — rather than pre-computing it in Power Query — meant the <strong>percentile thresholds</strong> update dynamically with any <strong>slicer selection</strong>. This pattern is now a reusable template for any <strong>time-based distribution analysis</strong>.
-</p>
-
-<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>2. Parameter tables are the cleanest path to a dynamic KPI architecture.</strong> Connecting a single parameter table to all visuals via a <strong>disconnected slicer</strong> eliminates <strong>measure duplication</strong> and keeps the <strong>model lean</strong>. The trade-off is added complexity in <strong>measure logic</strong>, but the user experience gain is significant — one slicer click repaints the entire report.
-</p>
-
-<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>3. Design consistency is as important as analytical accuracy.</strong> Adopting a deliberate palette — <strong>tomato red, mozzarella white, basil green</strong> — tied the report's visual identity to the business domain and improved stakeholder engagement. Colour-coding <strong>KPI cards</strong> by performance direction (positive/negative) reduced the time managers needed to interpret results during review sessions.
-</p>
+- **DAX window functions over pre-aggregation**: Building the percentile order interval analysis in DAX keeps thresholds dynamic with every slicer selection — now a reusable template for any time-based distribution work.
+- **Parameter tables for KPI switching**: A single disconnected slicer wired to a parameter table eliminates measure duplication and repaints the entire report in one click, with the only cost being slightly more complex measure logic.
+- **Design consistency drives adoption**: A deliberate domain-tied palette (tomato red, mozzarella white, basil green) and performance-direction colour-coding on KPI cards measurably reduced the time managers spent interpreting results.
 
 ---
 

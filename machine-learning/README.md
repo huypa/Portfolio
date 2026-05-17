@@ -31,9 +31,10 @@ This project is my assessed coursework for <strong>FIT5201 — Statistical Machi
 
 ## 2. Problem Statement
 
-<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-Off-the-shelf ML libraries abstract away the mechanics that determine whether a model generalises or overfits, clusters meaningfully, or collapses numerically. For a practitioner, that <strong>black-box dependence</strong> is a liability: you cannot diagnose failures you cannot see. These assignments address that gap directly — every algorithm is derived analytically and implemented from scratch, forcing a rigorous understanding of <strong>bias-variance trade-offs</strong>, <strong>probabilistic inference</strong>, and <strong>neural network architecture</strong> choices. The business payoff is a data scientist who can adapt any algorithm to a <strong>novel domain constraint</strong> rather than waiting for a library update.
-</p>
+- **Black-box dependence**: off-the-shelf libraries hide the mechanics that determine whether a model generalises, clusters meaningfully, or collapses numerically.
+- **Core gap**: without deriving and coding each algorithm from scratch, diagnosing failures in **bias-variance trade-offs**, **probabilistic inference**, or **numerical stability** is guesswork.
+- **Scope**: both assignments address this by requiring every method — regression, classification, EM, and neural networks — to be implemented analytically before any evaluation.
+- **Practical payoff**: a practitioner who can adapt any algorithm to a **novel domain constraint** rather than waiting for a library update.
 
 ---
 
@@ -139,17 +140,9 @@ Each notebook is self-contained: datasets are loaded inline, all <strong>hyperpa
 
 ## 8. Lessons Learned
 
-<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>1. Numerical stability is non-negotiable in probabilistic models.</strong> Implementing Soft-EM without the log-sum-exp trick produces silent underflow to zero on all-but-one <strong>cluster responsibilities</strong>, reducing it effectively to <strong>Hard-EM</strong>. The <strong>log-sum-exp reformulation</strong> is a small code change with a disproportionately large impact on correctness — a reminder that <strong>mathematical hygiene</strong> matters as much as algorithmic choice.
-</p>
-
-<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>2. Nested cross-validation prevents optimistic bias at model selection time.</strong> Using a <strong>single cross-validation loop</strong> to both select a hyperparameter and estimate its <strong>generalisation error</strong> leaks information and inflates reported performance. The <strong>outer/inner nesting structure</strong> adds computational cost but produces a trustworthy metric — a distinction that is invisible when using sklearn's <strong>GridSearchCV</strong> without the outer loop.
-</p>
-
-<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>3. Representation learning amplifies limited labelled data.</strong> Pre-training an <strong>autoencoder</strong> on unlabelled examples and using its <strong>encoder output</strong> as features consistently outperformed training on raw inputs when labelled data was scarce. This formalised the intuition that unsupervised structure can be leveraged before supervision begins — a principle central to modern <strong>foundation model fine-tuning</strong>.
-</p>
+- **Numerical stability is non-negotiable**: skipping the **log-sum-exp trick** in Soft-EM causes silent underflow that collapses cluster responsibilities — a small reformulation with an outsized impact on correctness.
+- **Nested CV prevents optimistic bias**: a single loop for both hyperparameter selection and error estimation leaks information; the **outer/inner nesting structure** is the only way to get a trustworthy generalisation metric.
+- **Representation learning stretches labelled data**: **autoencoder** pre-training on unlabelled examples consistently beat raw-input features when labels were scarce — the same principle driving modern **foundation model fine-tuning**.
 
 ---
 

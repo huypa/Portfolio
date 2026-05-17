@@ -29,9 +29,10 @@ This project was completed as Assignment 1 for <strong>FIT5212</strong> (Semi-St
 
 ## 2. Problem Statement
 
-<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-Academic databases like <strong>arXiv</strong> receive thousands of new submissions daily, making <strong>automated categorisation</strong> and <strong>thematic discovery</strong> critical for researchers and curators. Without reliable classification, relevant papers are buried; without topic modelling, emerging research trends go undetected. This project asks: can lightweight statistical models match or exceed neural approaches on a domain-specific <strong>binary classification task</strong>, and can unsupervised <strong>LDA</strong> surface coherent research themes at scale? The answers directly inform how organisations should allocate <strong>NLP infrastructure investment</strong> — favouring <strong>interpretable, compute-efficient methods</strong> when labelled data and compute are constrained.
-</p>
+- **Scale problem**: arXiv receives thousands of submissions daily, making manual **categorisation** and **thematic discovery** impractical for researchers and curators.
+- **Classification gap**: without reliable automated labelling, relevant papers are buried and emerging research trends go undetected.
+- **Core question**: can lightweight statistical models match or exceed neural approaches on a domain-specific **binary classification task**, and can unsupervised **LDA** surface coherent themes at scale?
+- **Practical implication**: answers directly guide **NLP infrastructure investment** — favouring **interpretable, compute-efficient methods** when labelled data and GPU resources are constrained.
 
 ---
 
@@ -132,17 +133,9 @@ The <strong>20,000-document bigram LDA model</strong> surfaced four coherent res
 
 ## 8. Lessons Learned
 
-<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>1. Compute constraints matter more than architecture choice.</strong> The RNN underperformed not because the architecture is inherently weaker, but because training time and available compute were insufficient for embeddings to converge properly. <strong>TF-IDF + Logistic Regression</strong> is a far more practical baseline when <strong>GPU resources</strong> are limited, and it should always be the starting point before investing in neural models.
-</p>
-
-<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>2. Dataset scale is the dominant lever for unsupervised learning quality.</strong> Moving from <strong>1,000 to 20,000 documents</strong> improved <strong>LDA topic coherence</strong> more than adding bigrams did. This reinforces the principle that <strong>data quantity</strong> often outweighs <strong>algorithmic sophistication</strong> in unsupervised settings — a finding directly applicable to any production topic modelling pipeline.
-</p>
-
-<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>3. Semantic richness of input features determines classification headroom.</strong> <strong>Title-only models</strong> consistently lagged behind <strong>abstract-based models</strong>, confirming that richer input representations create a <strong>performance ceiling</strong> that no amount of <strong>hyperparameter tuning</strong> can overcome. <strong>Feature engineering</strong> and <strong>input selection</strong> deserve at least as much attention as model selection.
-</p>
+- **Compute over architecture**: the RNN underperformed not due to a weaker design but insufficient training time — **TF-IDF + Logistic Regression** should always be the baseline before committing to neural models under **GPU constraints**.
+- **Scale beats sophistication**: scaling from **1,000 to 20,000 documents** improved **LDA topic coherence** more than adding bigrams, confirming that **data quantity** is the dominant lever in unsupervised settings.
+- **Input richness sets the ceiling**: **title-only models** consistently lagged abstract-based ones, showing that **feature selection** deserves as much attention as model selection — no tuning can compensate for information-poor inputs.
 
 ---
 
