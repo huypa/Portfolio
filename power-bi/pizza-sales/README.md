@@ -1,66 +1,159 @@
-# ☕ Portfolio – Power BI Pizza Dashboard
-## 1. Overview
-I designed and developed an interactive **Power BI dashboard** to analyze and visualize **pizza sales performance** across categories, products, and ingredients. The dashboard highlights **revenue trends, order intervals, and product insights**, enabling users to explore top-selling items, dynamic performance rankings, and time-based behavior patterns. I also analyze these metrics performance and create prediction model for future business usage. 
+# Power BI Pizza Sales Analytics Dashboard
 
-**Here is the full analysis:** [Pizza Analysis Presentation](https://docs.google.com/presentation/d/1BJHbNVPa5dgBUTS5R1_e-GQ4UisEIWd_HFxfMU5uvOY/edit?slide=id.g3a2318e546d_0_26#slide=id.g3a2318e546d_0_26)  
+<div align="center">
 
+![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+![DAX](https://img.shields.io/badge/DAX-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
+![Snowflake Schema](https://img.shields.io/badge/Snowflake%20Schema-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white)
+![Kaggle](https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=for-the-badge)
 
-**Full dashboard:** [Pizza Power BI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiODkwNzMwOTQtMzVjYi00NjM0LWE0MGMtZWQ0NjE2NTIyZDliIiwidCI6IjMyNGViYTBiLTJjNTUtNDE3NS1iMzBjLThjODNlMzZmMTE2ZCJ9)  
+</div>
 
-<img width="1852" height="1036" alt="Screenshot 2025-11-07 at 13 40 19" src="https://github.com/user-attachments/assets/3c97d416-6b2a-4c54-8454-fac13ea316a6"/>
+> 📎 **Deliverables** &nbsp;|&nbsp; [📊 Live Dashboard](https://app.powerbi.com/view?r=eyJrIjoiODkwNzMwOTQtMzVjYi00NjM0LWE0MGMtZWQ0NjE2NTIyZDliIiwidCI6IjMyNGViYTBiLTJjNTUtNDE3NS1iMzBjLThjODNlMzZmMTE2ZCJ9) &nbsp;|&nbsp; [📑 Presentation](https://docs.google.com/presentation/d/1BJHbNVPa5dgBUTS5R1_e-GQ4UisEIWd_HFxfMU5uvOY/edit?slide=id.g3a2318e546d_0_26#slide=id.g3a2318e546d_0_26) &nbsp;|&nbsp; [📄 PDF Report](Pizza_analysis.pdf)
 
-## 2. Project Details
+---
 
-- **Tool:** Power BI  
-- **Data Source:** [Pizza Transaction Data (Kaggle)](https://www.kaggle.com/code/mdismielhossenabir/pizza-sales-dataset/input)  
-- **Goasl Focus:** Revenue, Product Mix, Store & Time Interval Analysis  
-- **Technical Focus:** Power Querry / DAX / Database Design
+## 1. Quick Introduction
 
-### *Data model*
+<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
+This project delivers an end-to-end Power BI analytics solution for a pizza restaurant chain, transforming raw transaction data into actionable operational intelligence. Built for restaurant managers and operations teams, the dashboard surfaces revenue trends, product mix performance, and order efficiency metrics in a single, fully interactive view. The most impressive outcome: a percentile-based order interval analysis (P25–P90) built with DAX window functions that revealed 75% of orders are completed within 16 minutes — a benchmark that directly informed staffing and throughput planning.
+</p>
 
-The data model follows a **snowflake schema**, where *fact_sales* serves as the central table connected to key dimensions such as *Dim_product*, *Dim_category*, *Dim_date*, and *Dim_size*. Dynamic slicers and parameter tables allow users to switch between metrics like *Total Revenue*, *Total Orders*, *Total Quantity Sold*, *Average Order Value*, and *Average Pizza per Order*.
+---
+
+## 2. Problem Statement
+
+<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
+Restaurant managers lacked a consolidated view of what was selling, when revenue peaked, and how efficiently orders moved through the kitchen. Reporting was fragmented across spreadsheets with no dynamic filtering or KPI switching, making it impossible to answer questions like "Which pizza category drives the most revenue on weekdays?" or "What percentage of orders fall outside our target completion window?" Without this visibility, menu decisions, staffing schedules, and promotional strategies were based on intuition rather than data. This dashboard closes that gap by providing a single source of truth that updates from source data and gives managers instant answers across all key performance dimensions.
+</p>
+
+---
+
+## 3. Architecture / Data Flow
+
+<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
+The solution is built on a snowflake schema in Power BI, with <code>fact_sales</code> as the central fact table connected to four dimension tables. Parameter tables enable dynamic KPI switching without duplicating measures. The data originates from a Kaggle pizza transaction dataset, loaded and transformed via Power Query before being modelled in the semantic layer.
+</p>
+
+```mermaid
+flowchart LR
+    A[Kaggle Dataset\nPizza Transactions] -->|Power Query ETL| B[Power BI Semantic Layer]
+    B --> C[Snowflake Schema]
+    C --> D[fact_sales]
+    D --> E[Dim_product]
+    D --> F[Dim_category]
+    D --> G[Dim_date]
+    D --> H[Dim_size]
+    C --> I[Parameter Tables\nKPI Switcher]
+    I --> J[DAX Measures\nRevenue · Orders · AOV\nQuantity · Avg Pizza/Order]
+    J --> K[Interactive Dashboard\nRestaurant Managers & Ops Teams]
+```
+
+<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
+The data model screenshot below shows the full relationship map including the parameter tables used for dynamic metric switching.
+</p>
+
+<div align="center">
 
 <img width="1430" height="968" alt="Screenshot 2025-11-07 at 13 24 17" src="https://github.com/user-attachments/assets/b7cf5f9f-2ec7-4371-a730-5e4fb3251fd0" />
 
+</div>
 
-## 3. Key Features & Insights
-*3.1 Revenue & Trend Analysis*
-- Line and bar charts visualizing revenue trends by month and category with hover-enabled tooltips showing detailed sales metrics and percent change.
+---
 
-*3.2 Dynamic Metric Selection*
-- Powered by DAX parameter logic, enabling instant switching between KPIs (Revenue, Orders, Quantity, AOV, Avg Pizza per Order).
+## 4. Tech Stack
 
-*3.3 Product & Ingredient Rankings*
-- Dynamic Top/Bottom N ranking visuals for metric-based filtering.
-- Ingredient-level charts showing correlation between total revenue and quantity sold with average reference lines.
+<div align="center">
 
-*3.4 Order Interval Distribution*
-- Percentile-based (P25, P50, P75, P90) order interval analysis using DAX window functions to track order timing and customer frequency.
+| Tool | Role | Why Chosen |
+|------|------|------------|
+| Power BI Desktop | Dashboard development & data modelling | Industry-standard BI tool with native DAX support |
+| Power Query (M) | Data ingestion, cleaning, and transformation | Built-in ETL inside Power BI, no extra tooling needed |
+| DAX | KPI measures, window functions, parameter logic | Most expressive language for dynamic Power BI calculations |
+| Snowflake Schema | Data model design | Reduces redundancy and enables clean dimension filtering |
+| Kaggle Dataset | Source transaction data | Realistic, publicly available pizza sales records |
 
-*3.5 Category & Size Analysis*
-- Weighted average pizza price and category-level performance indicators to identify best-selling combinations.
+</div>
 
-## 4. Color & Design System
+---
 
-- **Palette:** Bright, modern tones — tomato red, mozzarella white, and basil green inspired by pizza ingredients.
-- **Highlights:** Used contrast and accent colors to separate key KPIs and trends.
-- **Layout:** Balanced use of bar, line, and scatter charts with clean spacing and rounded visual cards.
+## 5. Key Features
 
-## 5. Interactivity & Usability
+- **Dynamic KPI Switcher** — DAX parameter logic lets users instantly toggle between Total Revenue, Total Orders, Quantity Sold, Average Order Value, and Avg Pizza per Order across all visuals simultaneously.
+- **Top/Bottom N Product Rankings** — User-controlled ranking visuals for both products and ingredients, filterable by any selected KPI metric.
+- **Percentile Order Interval Analysis** — P25, P50, P75, and P90 order completion time benchmarks calculated using DAX window functions, revealing that 75% of orders are completed within 16 minutes.
+- **Ingredient-Level Revenue vs. Quantity Correlation** — Scatter charts with dynamic average reference lines expose which ingredients over- or under-index on revenue relative to volume.
+- **Category and Size Performance Indicators** — Weighted average pizza price and contribution metrics broken down by category and size, pinpointing the Classic and Supreme categories as the top revenue drivers.
 
-- **Dynamic Filters:** Filter by *Month*, *Category*, *Metric*, or *Product*.
-- **Top/Bottom Switch:** User-controlled toggle for ranking visualizations.
-- **Hover Cards:** Show detailed breakdowns like average order value, order count, and category contribution.
-- **Drill-down:** Explore data from category level to individual product or ingredient performance.
+---
 
-## 6. Keytake Aways
+## 6. Getting Started
 
-- **Consistent Revenue:** Stable $15K-$17K weekly performance
-- **Category Leaders:** Classic & Supreme drive 53% of total revenue
-- **Size Matters:** Large pizzas represent majority of sales
-- **Time-Driven:** 80% of revenue during lunch/dinner rush, in which the majority of revenue happened from Mon To Fri lunch and weekends dinner.
-- **Efficient Operations:** 75% of orders completed within 16 minutes
+<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
+<strong>Option 1 — Live Dashboard (no installation required):</strong> Click the <a href="https://app.powerbi.com/view?r=eyJrIjoiODkwNzMwOTQtMzVjYi00NjM0LWE0MGMtZWQ0NjE2NTIyZDliIiwidCI6IjMyNGViYTBiLTJjNTUtNDE3NS1iMzBjLThjODNlMzZmMTE2ZCJ9">Live Dashboard</a> link. The report is published publicly via Power BI Service and is fully interactive in any modern browser — no account required. Use the KPI slicer at the top to switch metrics, and the category/month slicers to filter the view.
+</p>
 
+<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
+<strong>Option 2 — Local file (Power BI Desktop required):</strong>
+</p>
 
+1. Clone or download this repository.
+2. Open `Pizza_analysis.pbix` in **Power BI Desktop** (free download from Microsoft).
+3. If prompted to refresh data, point the source connection to `data_pizza.xlsx` in the same directory.
+4. Interact with slicers and visuals directly in the Desktop application.
 
+<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
+<strong>Target audience:</strong> Restaurant managers and operations teams. <strong>Data freshness:</strong> Static snapshot from the Kaggle dataset; refresh the Power Query source to update with new transaction data.
+</p>
 
+---
+
+## 7. Results / Impact
+
+<div align="center">
+
+| Metric | Finding |
+|--------|---------|
+| Weekly Revenue | Consistent $15,000 – $17,000 |
+| Top Category Contribution | Classic & Supreme = 53% of total revenue |
+| Top Size by Volume | Large pizzas represent the majority of sales |
+| Peak Revenue Windows | 80% of revenue during lunch (Mon–Fri) and weekend dinner |
+| Order Completion Time (P75) | 75% of orders completed within 16 minutes |
+| Predictive Model | Additional forecasting model built for future business planning |
+
+</div>
+
+<div align="center">
+
+<img width="1852" height="1036" alt="Screenshot 2025-11-07 at 13 40 19" src="https://github.com/user-attachments/assets/3c97d416-6b2a-4c54-8454-fac13ea316a6"/>
+
+</div>
+
+---
+
+## 8. Lessons Learned
+
+<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
+<strong>1. DAX window functions unlock analytical depth that pre-aggregated tables cannot match.</strong> Building the percentile-based order interval analysis entirely in DAX — rather than pre-computing it in Power Query — meant the percentile thresholds update dynamically with any slicer selection. This pattern is now a reusable template for any time-based distribution analysis.
+</p>
+
+<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
+<strong>2. Parameter tables are the cleanest path to a dynamic KPI architecture.</strong> Connecting a single parameter table to all visuals via a disconnected slicer eliminates measure duplication and keeps the model lean. The trade-off is added complexity in measure logic, but the user experience gain is significant — one slicer click repaints the entire report.
+</p>
+
+<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
+<strong>3. Design consistency is as important as analytical accuracy.</strong> Adopting a deliberate palette — tomato red, mozzarella white, basil green — tied the report's visual identity to the business domain and improved stakeholder engagement. Colour-coding KPI cards by performance direction (positive/negative) reduced the time managers needed to interpret results during review sessions.
+</p>
+
+---
+
+## 9. Author
+
+<div align="center" style="font-family: 'Montserrat', sans-serif;">
+
+Written by **Anh Huy Phung** — Analytics Engineer & Data Scientist
+
+🌐 [Portfolio](https://huyphungportfolio.vercel.app/#) · 🐙 [GitHub](https://github.com/huypa) · 💼 [LinkedIn](https://www.linkedin.com/in/anh-huy-phung-a16503212/?skipRedirect=true) · 📧 [Huyphung.work@gmail.com](mailto:Huyphung.work@gmail.com)
+
+</div>
