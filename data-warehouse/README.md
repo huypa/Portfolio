@@ -21,7 +21,7 @@ An end-to-end data warehouse built on <strong>Google BigQuery</strong> and <stro
 ## 1. Quick Introduction
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-This project demonstrates a production-grade data warehouse workflow for a fictional international wholesale trading company — Wide World Importers — using BigQuery as the cloud warehouse and dbt as the transformation layer. I designed a Kimball-style star schema with 10 dimension tables and 7 fact tables, organized into a fully modular dbt DAG spanning staging, dimensional, and analytical layers. The most impressive outcome is a pipeline that enforces data quality through automated dbt tests (unique, not_null, FK relationships, accepted values, and custom business rules) with full documentation coverage generated via <code>dbt docs</code>.
+This project demonstrates a <strong>production-grade data warehouse</strong> workflow for a fictional international wholesale trading company — <strong>Wide World Importers</strong> — using BigQuery as the <strong>cloud warehouse</strong> and dbt as the <strong>transformation layer</strong>. I designed a <strong>Kimball-style star schema</strong> with <strong>10 dimension tables</strong> and <strong>7 fact tables</strong>, organized into a fully modular dbt DAG spanning <strong>staging, dimensional, and analytical layers</strong>. The most impressive outcome is a pipeline that enforces data quality through <strong>automated dbt tests</strong> (unique, not_null, FK relationships, accepted values, and custom business rules) with <strong>full documentation coverage</strong> generated via <code>dbt docs</code>.
 </p>
 
 ---
@@ -29,7 +29,7 @@ This project demonstrates a production-grade data warehouse workflow for a ficti
 ## 2. Problem Statement
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-Raw transactional data from an OLTP system is rarely query-ready for analytics. Tables are normalized, joins are deep, and business logic is buried in application code. Without a structured warehouse layer, analysts write slow, redundant, error-prone SQL — and no one agrees on what "revenue" or "active customer" means. This project solves that by centralizing business definitions in dbt models, enforcing data contracts through tests, and exposing clean, conformed dimensions and facts that any BI tool can consume directly. The result is a single source of truth for sales, purchasing, supplier, and salesperson performance across the entire organization.
+Raw transactional data from an <strong>OLTP system</strong> is rarely query-ready for analytics. Tables are <strong>normalized</strong>, joins are deep, and business logic is buried in application code. Without a structured warehouse layer, analysts write <strong>slow, redundant, error-prone SQL</strong> — and no one agrees on what "revenue" or "active customer" means. This project solves that by centralizing <strong>business definitions</strong> in dbt models, enforcing <strong>data contracts</strong> through tests, and exposing clean, <strong>conformed dimensions and facts</strong> that any BI tool can consume directly. The result is a <strong>single source of truth</strong> for <strong>sales, purchasing, supplier, and salesperson performance</strong> across the entire organization.
 </p>
 
 ---
@@ -37,7 +37,7 @@ Raw transactional data from an OLTP system is rarely query-ready for analytics. 
 ## 3. Architecture / Data Flow
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-The pipeline follows a three-layer dbt architecture: raw source data lands in BigQuery, staging models clean and rename fields, dimensional models apply Kimball SCD logic and surrogate keys, and fact models join dimensions to produce conformed grain-level metrics.
+The pipeline follows a <strong>three-layer dbt architecture</strong>: raw source data lands in BigQuery, <strong>staging models</strong> clean and rename fields, <strong>dimensional models</strong> apply <strong>Kimball SCD logic</strong> and <strong>surrogate keys</strong>, and <strong>fact models</strong> join dimensions to produce <strong>conformed grain-level metrics</strong>.
 </p>
 
 ```mermaid
@@ -82,7 +82,7 @@ flowchart LR
 ## 6. Getting Started
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-Clone the repository and follow the steps below. You will need a Google Cloud project with BigQuery enabled and a service account key.
+Clone the repository and follow the steps below. You will need a <strong>Google Cloud project</strong> with <strong>BigQuery</strong> enabled and a <strong>service account key</strong>.
 </p>
 
 ```bash
@@ -109,7 +109,7 @@ dbt docs generate && dbt docs serve
 ```
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-After <code>dbt docs serve</code>, open <code>http://localhost:8080</code> to explore the DAG, model descriptions, and column-level documentation.
+After <code>dbt docs serve</code>, open <code>http://localhost:8080</code> to explore the <strong>lineage DAG</strong>, model descriptions, and <strong>column-level documentation</strong>.
 </p>
 
 ---
@@ -136,15 +136,15 @@ After <code>dbt docs serve</code>, open <code>http://localhost:8080</code> to ex
 ## 8. Lessons Learned
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>1. Grain definition is the hardest part of dimensional modeling.</strong> Choosing the wrong grain for a fact table — e.g., mixing order-level and line-level measures — causes silent aggregation errors downstream. Separating <code>fact_sales_order</code> (header grain) from <code>fact_sales_order_line</code> (line grain) was a deliberate design decision that paid off in BI query accuracy.
+<strong>1. Grain definition is the hardest part of dimensional modeling.</strong> Choosing the <strong>wrong grain</strong> for a fact table — e.g., mixing order-level and line-level measures — causes silent <strong>aggregation errors</strong> downstream. Separating <strong><code>fact_sales_order</code></strong> (<strong>header grain</strong>) from <strong><code>fact_sales_order_line</code></strong> (<strong>line grain</strong>) was a deliberate design decision that paid off in BI query accuracy.
 </p>
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>2. dbt tests are a contract, not an afterthought.</strong> Running tests late in the project surface FK mismatches that traced back to upstream staging logic. Embedding tests from the first model onwards — and failing the pipeline on test errors — would have caught these issues earlier and saved significant rework.
+<strong>2. dbt tests are a contract, not an afterthought.</strong> Running tests late in the project surface <strong>FK mismatches</strong> that traced back to upstream <strong>staging logic</strong>. Embedding tests from the first model onwards — and failing the pipeline on test errors — would have caught these issues earlier and saved significant rework.
 </p>
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>3. Role-playing dimensions require explicit naming conventions.</strong> Reusing a single <code>dim_date</code> for order date, ship date, and delivery date demands aliased references in fact CTEs. Establishing a clear naming convention (<code>order_date_key</code>, <code>ship_date_key</code>) across all fact tables from the start prevents ambiguity in SQL and in the generated documentation.
+<strong>3. Role-playing dimensions require explicit naming conventions.</strong> Reusing a single <strong><code>dim_date</code></strong> for order date, ship date, and delivery date demands aliased references in fact CTEs. Establishing a clear naming convention (<strong><code>order_date_key</code></strong>, <strong><code>ship_date_key</code></strong>) across all fact tables from the start prevents ambiguity in SQL and in the generated documentation.
 </p>
 
 ---

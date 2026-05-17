@@ -12,7 +12,7 @@
 </div>
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-Two end-to-end machine learning assignments built entirely from scratch — covering supervised regression and classification, probabilistic learning, unsupervised document clustering via EM, and deep representation learning with autoencoders — all implemented following scikit-learn conventions without relying on high-level APIs.
+Two end-to-end machine learning assignments built entirely from scratch — covering <strong>supervised regression and classification</strong>, <strong>probabilistic learning</strong>, <strong>unsupervised document clustering</strong> via <strong>EM</strong>, and deep representation learning with <strong>autoencoders</strong> — all implemented following <strong>scikit-learn conventions</strong> without relying on high-level APIs.
 </p>
 
 ---
@@ -24,7 +24,7 @@ Two end-to-end machine learning assignments built entirely from scratch — cove
 ## 1. Quick Introduction
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-This project is my assessed coursework for <strong>FIT5201 — Statistical Machine Learning</strong> at Monash University (Semester 2, 2024), where I designed and implemented two comprehensive assignments spanning core ML theory and practice. My role covered everything from mathematical derivation — analytical Ridge Regression gradients, EM convergence proofs — to end-to-end Python implementation and quantitative evaluation. The most impressive outcome was achieving numerically stable soft-EM document clustering from scratch using the log-sum-exp trick, and surpassing a KNN baseline with a tuned Ridge Regression model selected through nested cross-validation.
+This project is my assessed coursework for <strong>FIT5201 — Statistical Machine Learning</strong> at <strong>Monash University</strong> (Semester 2, 2024), where I designed and implemented two comprehensive assignments spanning core ML theory and practice. My role covered everything from <strong>mathematical derivation</strong> — <strong>analytical Ridge Regression gradients</strong>, <strong>EM convergence proofs</strong> — to end-to-end Python implementation and quantitative evaluation. The most impressive outcome was achieving numerically stable soft-EM document clustering from scratch using the <strong>log-sum-exp trick</strong>, and surpassing a <strong>KNN baseline</strong> with a tuned Ridge Regression model selected through <strong>nested cross-validation</strong>.
 </p>
 
 ---
@@ -32,7 +32,7 @@ This project is my assessed coursework for <strong>FIT5201 — Statistical Machi
 ## 2. Problem Statement
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-Off-the-shelf ML libraries abstract away the mechanics that determine whether a model generalises or overfits, clusters meaningfully, or collapses numerically. For a practitioner, that black-box dependence is a liability: you cannot diagnose failures you cannot see. These assignments address that gap directly — every algorithm is derived analytically and implemented from scratch, forcing a rigorous understanding of bias-variance trade-offs, probabilistic inference, and neural network architecture choices. The business payoff is a data scientist who can adapt any algorithm to a novel domain constraint rather than waiting for a library update.
+Off-the-shelf ML libraries abstract away the mechanics that determine whether a model generalises or overfits, clusters meaningfully, or collapses numerically. For a practitioner, that <strong>black-box dependence</strong> is a liability: you cannot diagnose failures you cannot see. These assignments address that gap directly — every algorithm is derived analytically and implemented from scratch, forcing a rigorous understanding of <strong>bias-variance trade-offs</strong>, <strong>probabilistic inference</strong>, and <strong>neural network architecture</strong> choices. The business payoff is a data scientist who can adapt any algorithm to a <strong>novel domain constraint</strong> rather than waiting for a library update.
 </p>
 
 ---
@@ -115,7 +115,7 @@ jupyter notebook 34140298_Anh_Huy_Phung_a2_sec1.ipynb
 ```
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-Each notebook is self-contained: datasets are loaded inline, all hyperparameters are defined at the top of each section, and all cells can be executed top-to-bottom without additional configuration. PDF exports of each notebook are included alongside the <code>.ipynb</code> files for offline review.
+Each notebook is self-contained: datasets are loaded inline, all <strong>hyperparameters</strong> are defined at the top of each section, and all cells can be executed top-to-bottom without additional configuration. <strong>PDF exports</strong> of each notebook are included alongside the <code>.ipynb</code> files for offline review.
 </p>
 
 ---
@@ -140,15 +140,15 @@ Each notebook is self-contained: datasets are loaded inline, all hyperparameters
 ## 8. Lessons Learned
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>1. Numerical stability is non-negotiable in probabilistic models.</strong> Implementing Soft-EM without the log-sum-exp trick produces silent underflow to zero on all-but-one cluster responsibilities, reducing it effectively to Hard-EM. The log-sum-exp reformulation is a small code change with a disproportionately large impact on correctness — a reminder that mathematical hygiene matters as much as algorithmic choice.
+<strong>1. Numerical stability is non-negotiable in probabilistic models.</strong> Implementing Soft-EM without the log-sum-exp trick produces silent underflow to zero on all-but-one <strong>cluster responsibilities</strong>, reducing it effectively to <strong>Hard-EM</strong>. The <strong>log-sum-exp reformulation</strong> is a small code change with a disproportionately large impact on correctness — a reminder that <strong>mathematical hygiene</strong> matters as much as algorithmic choice.
 </p>
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>2. Nested cross-validation prevents optimistic bias at model selection time.</strong> Using a single cross-validation loop to both select a hyperparameter and estimate its generalisation error leaks information and inflates reported performance. The outer/inner nesting structure adds computational cost but produces a trustworthy metric — a distinction that is invisible when using sklearn's GridSearchCV without the outer loop.
+<strong>2. Nested cross-validation prevents optimistic bias at model selection time.</strong> Using a <strong>single cross-validation loop</strong> to both select a hyperparameter and estimate its <strong>generalisation error</strong> leaks information and inflates reported performance. The <strong>outer/inner nesting structure</strong> adds computational cost but produces a trustworthy metric — a distinction that is invisible when using sklearn's <strong>GridSearchCV</strong> without the outer loop.
 </p>
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>3. Representation learning amplifies limited labelled data.</strong> Pre-training an autoencoder on unlabelled examples and using its encoder output as features consistently outperformed training on raw inputs when labelled data was scarce. This formalised the intuition that unsupervised structure can be leveraged before supervision begins — a principle central to modern foundation model fine-tuning.
+<strong>3. Representation learning amplifies limited labelled data.</strong> Pre-training an <strong>autoencoder</strong> on unlabelled examples and using its <strong>encoder output</strong> as features consistently outperformed training on raw inputs when labelled data was scarce. This formalised the intuition that unsupervised structure can be leveraged before supervision begins — a principle central to modern <strong>foundation model fine-tuning</strong>.
 </p>
 
 ---

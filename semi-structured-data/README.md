@@ -1,7 +1,7 @@
 # Text Classification & Topic Modelling on arXiv Papers
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-Binary classification of arXiv papers (Computational Linguistics vs. other) and unsupervised topic discovery via LDA — comparing statistical vs. neural approaches and unigram vs. bigram representations across dataset scales.
+<strong>Binary classification</strong> of <strong>arXiv papers</strong> (<strong>Computational Linguistics</strong> vs. other) and unsupervised topic discovery via <strong>LDA</strong> — comparing <strong>statistical vs. neural approaches</strong> and <strong>unigram vs. bigram representations</strong> across dataset scales.
 </p>
 
 <div align="center">
@@ -22,7 +22,7 @@ Binary classification of arXiv papers (Computational Linguistics vs. other) and 
 ## 1. Quick Introduction
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-This project was completed as Assignment 1 for FIT5212 (Semi-Structured Data) at Monash University, tackling real-world NLP challenges on a large corpus of arXiv research abstracts. In Part 1, I designed and benchmarked eight classification configurations — spanning input types, algorithms, and dataset scales — to identify the most effective approach for detecting Computational Linguistics papers. The standout result was Logistic Regression with TF-IDF on full abstracts, achieving 87.4% accuracy and F1 0.84, outperforming an RNN baseline by over 15 percentage points under the same compute constraints.
+This project was completed as Assignment 1 for <strong>FIT5212</strong> (Semi-Structured Data) at Monash University, tackling real-world NLP challenges on a large corpus of <strong>arXiv research abstracts</strong>. In Part 1, I designed and benchmarked <strong>eight classification configurations</strong> — spanning input types, algorithms, and dataset scales — to identify the most effective approach for detecting Computational Linguistics papers. The standout result was <strong>Logistic Regression with TF-IDF</strong> on full abstracts, achieving <strong>87.4% accuracy</strong> and <strong>F1 0.84</strong>, outperforming an <strong>RNN baseline</strong> by over <strong>15 percentage points</strong> under the same compute constraints.
 </p>
 
 ---
@@ -30,7 +30,7 @@ This project was completed as Assignment 1 for FIT5212 (Semi-Structured Data) at
 ## 2. Problem Statement
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-Academic databases like arXiv receive thousands of new submissions daily, making automated categorisation and thematic discovery critical for researchers and curators. Without reliable classification, relevant papers are buried; without topic modelling, emerging research trends go undetected. This project asks: can lightweight statistical models match or exceed neural approaches on a domain-specific binary classification task, and can unsupervised LDA surface coherent research themes at scale? The answers directly inform how organisations should allocate NLP infrastructure investment — favouring interpretable, compute-efficient methods when labelled data and compute are constrained.
+Academic databases like <strong>arXiv</strong> receive thousands of new submissions daily, making <strong>automated categorisation</strong> and <strong>thematic discovery</strong> critical for researchers and curators. Without reliable classification, relevant papers are buried; without topic modelling, emerging research trends go undetected. This project asks: can lightweight statistical models match or exceed neural approaches on a domain-specific <strong>binary classification task</strong>, and can unsupervised <strong>LDA</strong> surface coherent research themes at scale? The answers directly inform how organisations should allocate <strong>NLP infrastructure investment</strong> — favouring <strong>interpretable, compute-efficient methods</strong> when labelled data and compute are constrained.
 </p>
 
 ---
@@ -91,11 +91,11 @@ python -m nltk.downloader stopwords punkt
 
 **Run Part 1 — Text Classification**
 
-Open `code_34140298_part1.ipynb` in Jupyter or Google Colab and run all cells in order. The notebook expects the arXiv CSV data file in the same working directory. Adjust the `DATASET_SIZE` variable at the top of the notebook to switch between the 1,000-sample and full-dataset configurations.
+Open `code_34140298_part1.ipynb` in Jupyter or Google Colab and run all cells in order. The notebook expects the arXiv CSV data file in the same working directory. Adjust the **`DATASET_SIZE`** variable at the top of the notebook to switch between the 1,000-sample and full-dataset configurations.
 
 **Run Part 2 — Topic Modelling**
 
-Open `code_34140298_part2.ipynb` and run all cells. Set the `USE_BIGRAMS` flag and `N_DOCS` variable to reproduce any of the four LDA variations. pyLDAvis visualisations are rendered inline; export the HTML for standalone viewing.
+Open `code_34140298_part2.ipynb` and run all cells. Set the **`USE_BIGRAMS`** flag and **`N_DOCS`** variable to reproduce any of the four LDA variations. **`pyLDAvis`** visualisations are rendered inline; export the HTML for standalone viewing.
 
 **View the report**
 
@@ -125,7 +125,7 @@ The full written analysis including methodology, results tables, and discussion 
 </div>
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-The 20,000-document bigram LDA model surfaced four coherent research clusters — neural networks, reinforcement learning, adversarial attacks, and human–computer interaction — with minimal topic overlap. These results confirm that corpus scale has a larger impact on topic quality than phrase detection alone.
+The <strong>20,000-document bigram LDA model</strong> surfaced four coherent research clusters — <strong>neural networks</strong>, <strong>reinforcement learning</strong>, <strong>adversarial attacks</strong>, and <strong>human–computer interaction</strong> — with minimal topic overlap. These results confirm that <strong>corpus scale</strong> has a larger impact on topic quality than phrase detection alone.
 </p>
 
 ---
@@ -133,15 +133,15 @@ The 20,000-document bigram LDA model surfaced four coherent research clusters �
 ## 8. Lessons Learned
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>1. Compute constraints matter more than architecture choice.</strong> The RNN underperformed not because the architecture is inherently weaker, but because training time and available compute were insufficient for embeddings to converge properly. TF-IDF + Logistic Regression is a far more practical baseline when GPU resources are limited, and it should always be the starting point before investing in neural models.
+<strong>1. Compute constraints matter more than architecture choice.</strong> The RNN underperformed not because the architecture is inherently weaker, but because training time and available compute were insufficient for embeddings to converge properly. <strong>TF-IDF + Logistic Regression</strong> is a far more practical baseline when <strong>GPU resources</strong> are limited, and it should always be the starting point before investing in neural models.
 </p>
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>2. Dataset scale is the dominant lever for unsupervised learning quality.</strong> Moving from 1,000 to 20,000 documents improved LDA topic coherence more than adding bigrams did. This reinforces the principle that data quantity often outweighs algorithmic sophistication in unsupervised settings — a finding directly applicable to any production topic modelling pipeline.
+<strong>2. Dataset scale is the dominant lever for unsupervised learning quality.</strong> Moving from <strong>1,000 to 20,000 documents</strong> improved <strong>LDA topic coherence</strong> more than adding bigrams did. This reinforces the principle that <strong>data quantity</strong> often outweighs <strong>algorithmic sophistication</strong> in unsupervised settings — a finding directly applicable to any production topic modelling pipeline.
 </p>
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>3. Semantic richness of input features determines classification headroom.</strong> Title-only models consistently lagged behind abstract-based models, confirming that richer input representations create a performance ceiling that no amount of hyperparameter tuning can overcome. Feature engineering and input selection deserve at least as much attention as model selection.
+<strong>3. Semantic richness of input features determines classification headroom.</strong> <strong>Title-only models</strong> consistently lagged behind <strong>abstract-based models</strong>, confirming that richer input representations create a <strong>performance ceiling</strong> that no amount of <strong>hyperparameter tuning</strong> can overcome. <strong>Feature engineering</strong> and <strong>input selection</strong> deserve at least as much attention as model selection.
 </p>
 
 ---

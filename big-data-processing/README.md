@@ -21,7 +21,7 @@ End-to-end big data pipeline combining PySpark ML, Apache Kafka, and Spark Struc
 ## 1. Quick Introduction
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-Developed as part of <em>FIT5202 – Data Processing for Big Data</em> at Monash University, this project tackles real-world eCommerce fraud detection at scale by building an end-to-end data pipeline across two phases: batch ML model training and real-time streaming inference. I designed and implemented the full pipeline — from feature engineering on large PySpark DataFrames, through model selection (Gradient Boosted Trees, AUC > 0.9), to deploying the persisted model inside a live Kafka–Spark Structured Streaming system that classifies 500–1000 transactions every 5 seconds. The most significant outcome was delivering a working, low-latency fraud detection prototype with real-time dashboards covering fraud hotspot maps, product monitoring, and transaction volumes.
+Developed as part of <em><strong>FIT5202 – Data Processing for Big Data</strong></em> at Monash University, this project tackles real-world <strong>eCommerce fraud detection</strong> at scale by building an end-to-end data pipeline across two phases: batch ML model training and real-time streaming inference. I designed and implemented the full pipeline — from <strong>feature engineering</strong> on large PySpark DataFrames, through model selection (<strong>Gradient Boosted Trees</strong>, <strong>AUC > 0.9</strong>), to deploying the persisted model inside a live <strong>Kafka–Spark Structured Streaming</strong> system that classifies <strong>500–1000 transactions every 5 seconds</strong>. The most significant outcome was delivering a working, low-latency fraud detection prototype with real-time dashboards covering <strong>fraud hotspot maps</strong>, product monitoring, and transaction volumes.
 </p>
 
 ---
@@ -29,7 +29,7 @@ Developed as part of <em>FIT5202 – Data Processing for Big Data</em> at Monash
 ## 2. Problem Statement
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-eCommerce fraud costs businesses billions annually and erodes customer trust. Traditional batch-based fraud screening is too slow — fraudulent transactions are often completed before analysts can act. The business challenge here is two-fold: first, building a machine learning model accurate enough to reliably flag fraud in noisy, imbalanced transaction data; second, operationalising that model so it scores incoming transactions in near real time, enabling immediate intervention. Without a scalable streaming architecture, even the best offline model delivers no practical value at the point of sale.
+<strong>eCommerce fraud</strong> costs businesses billions annually and erodes customer trust. Traditional <strong>batch-based fraud screening</strong> is too slow — fraudulent transactions are often completed before analysts can act. The business challenge here is two-fold: first, building a machine learning model accurate enough to reliably flag fraud in noisy, <strong>imbalanced transaction data</strong>; second, operationalising that model so it scores incoming transactions in near real time, enabling immediate intervention. Without a scalable <strong>streaming architecture</strong>, even the best offline model delivers no practical value at the <strong>point of sale</strong>.
 </p>
 
 ---
@@ -109,7 +109,7 @@ jupyter notebook A2A_aphu0004.ipynb
 ```
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-Run all cells sequentially. The notebook will load the dataset, perform feature engineering, train Random Forest and GBT models, evaluate them, and persist the best GBT model to disk for use in Part B.
+Run all cells sequentially. The notebook will load the dataset, perform <strong>feature engineering</strong>, train <strong>Random Forest</strong> and <strong>GBT model</strong>s, evaluate them, and persist the best <strong>GBT model</strong> to disk for use in Part B.
 </p>
 
 ### Running Part B – Real-Time Streaming
@@ -146,6 +146,10 @@ jupyter notebook Assignment-2B-Task2_spark_streaming_34140298.ipynb
 jupyter notebook Assignment-2B-Task3_consumer_34140298.ipynb
 ```
 
+<p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
+The <strong>Spark Structured Streaming</strong> notebook loads the persisted <strong>GBT model</strong> and applies it to each incoming micro-batch, writing fraud predictions to Parquet for downstream consumption.
+</p>
+
 ---
 
 ## 7. Results / Impact
@@ -169,15 +173,15 @@ jupyter notebook Assignment-2B-Task3_consumer_34140298.ipynb
 ## 8. Lessons Learned
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>1. Model persistence is the critical bridge between batch and streaming.</strong> Serialising the trained GBT model and loading it inside the Spark Structured Streaming context — without retraining — required careful attention to Spark version compatibility and schema alignment between training and inference DataFrames. Any mismatch silently degrades predictions rather than throwing an obvious error.
+<strong>1. Model persistence is the critical bridge between batch and streaming.</strong> Serialising the trained GBT model and loading it inside the Spark Structured Streaming context — without retraining — required careful attention to <strong>Spark version compatibility</strong> and <strong>schema alignment</strong> between training and inference DataFrames. Any mismatch silently degrades predictions rather than throwing an obvious error.
 </p>
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>2. Kafka throughput tuning is non-trivial at scale.</strong> Simulating 500–1000 records every 5 seconds exposed bottlenecks in producer batch size, Kafka topic partition count, and Spark micro-batch trigger intervals. Aligning these three levers was essential to prevent consumer lag from accumulating during sustained load.
+<strong>2. Kafka throughput tuning is non-trivial at scale.</strong> Simulating 500–1000 records every 5 seconds exposed bottlenecks in <strong>producer batch size</strong>, <strong>Kafka topic partition count</strong>, and <strong>micro-batch trigger intervals</strong>. Aligning these three levers was essential to prevent consumer lag from accumulating during sustained load.
 </p>
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>3. Data ethics cannot be an afterthought in fraud systems.</strong> Working with demographic and behavioural data highlighted how easily a fraud model can encode proxy discrimination (e.g., flagging based on geography or device type that correlates with protected attributes). Explicitly reviewing fairness, anonymisation, and data minimisation as part of Part A built habits that should be standard practice in any production ML system.
+<strong>3. Data ethics cannot be an afterthought in fraud systems.</strong> Working with demographic and behavioural data highlighted how easily a fraud model can encode <strong>proxy discrimination</strong> (e.g., flagging based on geography or device type that correlates with protected attributes). Explicitly reviewing fairness, <strong>anonymisation</strong>, and data minimisation as part of Part A built habits that should be standard practice in any production ML system aligned with <strong>Australian Privacy Principles</strong>.
 </p>
 
 ---

@@ -16,7 +16,7 @@
 ## 1. Quick Introduction
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-This project builds two independent wrangling pipelines for a university assignment scored <strong>99/100</strong>. In Task 1, I parsed a government-formatted quasi-XML trademark file into a structured JSON dataset using only Python regex — no XML library could handle the malformed structure. In Task 2, I transformed multi-channel YouTube comment exports into NLP-ready count vectors, including language filtering, stemming, and vocabulary construction, producing outputs ready for downstream ML classification.
+This project builds two independent wrangling pipelines for a university assignment scored <strong>99/100</strong>. In Task 1, I parsed a government-formatted <strong>quasi-XML trademark file</strong> into a <strong>structured JSON dataset</strong> using only <strong>Python regex</strong> — no <strong>XML library</strong> could handle the malformed structure. In Task 2, I transformed multi-channel <strong>YouTube comment exports</strong> into <strong>NLP-ready count vectors</strong>, including <strong>language filtering</strong>, <strong>stemming</strong>, and <strong>vocabulary construction</strong>, producing outputs ready for downstream <strong>ML classification</strong>.
 </p>
 
 ---
@@ -24,14 +24,14 @@ This project builds two independent wrangling pipelines for a university assignm
 ## 2. Problem Statement
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-Raw data from external sources rarely arrives in a usable format. This project addresses two concrete scenarios:
+Raw data from <strong>external sources</strong> rarely arrives in a <strong>usable format</strong>. This project addresses two concrete scenarios:
 </p>
 
-- **Trademark XML records**: a `.txt` file containing quasi-XML with inconsistent delimiters, nested legal entity blocks, and missing values — standard parsers fail on this format, yet the data must become a clean, query-ready JSON dataset.
-- **YouTube comment exports**: multi-sheet Excel dumps in mixed languages and encodings that must be deduplicated, cleaned, and converted into sparse numerical feature matrices for ML.
+- **Trademark XML records**: a `.txt` file containing quasi-XML with **inconsistent delimiters**, **nested legal entity blocks**, and missing values — standard parsers fail on this format, yet the data must become a clean, query-ready JSON dataset.
+- **YouTube comment exports**: multi-sheet Excel dumps in **mixed languages and encodings** that must be deduplicated, cleaned, and converted into **sparse numerical feature matrices** for ML.
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-Both tasks mirror what a data engineer encounters in practice: unstructured inputs with no schema guarantees, where every assumption about missing data carries downstream consequences.
+Both tasks mirror what a <strong>data engineer</strong> encounters in practice: unstructured inputs with no <strong>schema guarantees</strong>, where every assumption about <strong>missing data</strong> carries <strong>downstream consequences</strong>.
 </p>
 
 ---
@@ -148,15 +148,15 @@ jupyter notebook task2_021.ipynb
 ## 8. Lessons Learned
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-1. <strong>Regex over libraries when schema is broken</strong> — standard XML parsers reject non-conformant files; writing targeted per-field patterns was faster to debug and more reliable than forcing a library.
+1. <strong>Regex over libraries when schema is broken</strong> — standard XML parsers reject <strong>non-conformant files</strong>; writing targeted <strong>per-field patterns</strong> was faster to debug and more reliable than forcing a library.
 </p>
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-2. <strong>Pipeline step order changes results</strong> — applying stemming before vs. after stopword removal produces different vocabularies; documenting the order is as critical as the code itself.
+2. <strong>Pipeline step order changes results</strong> — applying <strong>stemming</strong> before vs. after <strong>stopword removal</strong> produces different vocabularies; documenting the <strong>step order</strong> is as critical as the code itself.
 </p>
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-3. <strong>Null handling is a design decision</strong> — every assumption made to fill or drop a missing value shapes downstream analytics; inline documentation prevents silent error compounding.
+3. <strong>Null handling is a design decision</strong> — every assumption made to fill or drop a missing value shapes downstream analytics; <strong>inline documentation</strong> prevents silent <strong>error compounding</strong>.
 </p>
 
 ---

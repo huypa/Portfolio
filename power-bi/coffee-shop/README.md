@@ -16,7 +16,7 @@
 ## 1. Quick Introduction
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-This project delivers an end-to-end Power BI sales dashboard for a three-location NYC coffee business, built on point-of-sale transaction data and designed for store managers and business stakeholders who need at-a-glance performance visibility. I owned the full pipeline — data modelling in a snowflake schema, DAX measure design with dynamic KPI switching, and UX-focused layout — turning raw café transactions into actionable intelligence. The most impressive outcome: all major KPIs climbed 22–23% in March, and the dashboard surfaces exactly which stores, products, and day-parts are driving that growth.
+This project delivers an end-to-end Power BI sales dashboard for a <strong>three-location NYC coffee business</strong>, built on <strong>point-of-sale transaction data</strong> and designed for <strong>store managers and business stakeholders</strong> who need at-a-glance performance visibility. I owned the full pipeline — data modelling in a <strong>snowflake schema</strong>, <strong>DAX measure design</strong> with <strong>dynamic KPI switching</strong>, and UX-focused layout — turning raw café transactions into actionable intelligence. The most impressive outcome: all major KPIs climbed <strong>22–23% in March</strong>, and the dashboard surfaces exactly which <strong>stores, products, and day-parts</strong> are driving that growth.
 </p>
 
 ---
@@ -24,7 +24,7 @@ This project delivers an end-to-end Power BI sales dashboard for a three-locatio
 ## 2. Problem Statement
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-Three geographically separate coffee shops — Astoria, Hell's Kitchen, and Lower Manhattan — were generating significant point-of-sale data with no unified view of performance. Managers lacked a reliable way to compare store revenue, understand which product categories drove sales, or identify whether weekday commuter traffic materially differed from weekend walk-ins. Without these answers, staffing decisions, promotional timing, and inventory planning were largely guesswork. This dashboard replaces that guesswork with a single, always-current source of truth: revenue, quantity sold, and transaction counts with period-over-period change indicators, broken down by store, product type, category, and day-of-week — so every decision is backed by data.
+Three geographically separate coffee shops — <strong>Astoria, Hell's Kitchen, and Lower Manhattan</strong> — were generating significant <strong>point-of-sale data</strong> with no unified view of performance. Managers lacked a reliable way to compare store revenue, understand which <strong>product categories</strong> drove sales, or identify whether <strong>weekday commuter traffic</strong> materially differed from weekend walk-ins. Without these answers, <strong>staffing decisions</strong>, <strong>promotional timing</strong>, and <strong>inventory planning</strong> were largely guesswork. This dashboard replaces that guesswork with a <strong>single, always-current source of truth</strong>: revenue, quantity sold, and transaction counts with <strong>period-over-period change indicators</strong>, broken down by store, product type, category, and day-of-week — so every decision is backed by data.
 </p>
 
 ---
@@ -32,7 +32,7 @@ Three geographically separate coffee shops — Astoria, Hell's Kitchen, and Lowe
 ## 3. Architecture / Data Flow
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-The solution follows a snowflake schema centred on a Transaction fact table, surrounded by four dimension tables and enriched by two supporting analytical tables. Raw CSV data from the Kaggle point-of-sale dataset is loaded into Power Query for cleansing and transformation, then modelled in Power BI Desktop before being published to the Power BI Service for stakeholder consumption.
+The solution follows a <strong>snowflake schema</strong> centred on a <strong>Transaction fact table</strong>, surrounded by <strong>four dimension tables</strong> and enriched by two supporting analytical tables. Raw CSV data from the Kaggle point-of-sale dataset is loaded into <strong>Power Query</strong> for cleansing and transformation, then modelled in <strong>Power BI Desktop</strong> before being published to the <strong>Power BI Service</strong> for stakeholder consumption.
 </p>
 
 ```mermaid
@@ -50,7 +50,7 @@ flowchart LR
 ```
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-The Parameter Table enables dynamic metric selection — users toggle between Revenue, Quantity Sold, and Transaction Count without navigating away from the page. The Measure Table centralises all DAX logic, keeping report visuals clean and calculations maintainable.
+The <strong>Parameter Table</strong> enables <strong>dynamic metric selection</strong> — users toggle between Revenue, Quantity Sold, and Transaction Count without navigating away from the page. The <strong>Measure Table</strong> centralises all <strong>DAX logic</strong>, keeping report visuals clean and calculations maintainable.
 </p>
 
 <div align="center">
@@ -101,7 +101,7 @@ The fastest way to explore the dashboard is via the live embed link — no Power
 5. Click a category or product bar to cross-filter all other visuals on the page.
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-To open the source file locally, download the <code>.pbix</code> file from this repository and open it in <strong>Power BI Desktop</strong> (free, Windows). The PDF report linked above is a static snapshot suitable for sharing without a Power BI account.
+To open the source file locally, download the <code>.pbix</code> file from this repository and open it in <strong>Power BI Desktop</strong> (free, Windows). The <strong>PDF report</strong> linked above is a static snapshot suitable for sharing without a Power BI account.
 </p>
 
 ---
@@ -109,7 +109,7 @@ To open the source file locally, download the <code>.pbix</code> file from this 
 ## 7. Results / Impact
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-March results confirmed strong, broad-based growth across all three locations. The dashboard surfaces these outcomes at a glance, with drill-down available to the daily level for any metric.
+March results confirmed strong, broad-based growth across all three locations — all major KPIs up <strong>22–23%</strong>, led by <strong>espresso-based drinks</strong>, with <strong>Lower Manhattan</strong> edging ahead and <strong>weekday traffic</strong> underpinning the business model. The dashboard surfaces these outcomes at a glance, with drill-down available to the daily level for any metric.
 </p>
 
 <div align="center">
@@ -135,15 +135,15 @@ March results confirmed strong, broad-based growth across all three locations. T
 ## 8. Lessons Learned
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>1. Parameter Tables unlock report scalability.</strong> Routing all three KPIs through a single Parameter Table rather than duplicating visuals reduced page count dramatically and kept the user experience focused. This pattern is now a default in my BI toolkit for any multi-metric report.
+<strong>1. Parameter Tables unlock report scalability.</strong> Routing all three KPIs through a single <strong>Parameter Table</strong> rather than duplicating visuals reduced page count dramatically and kept the <strong>user experience</strong> focused. This pattern is now a default in my <strong>BI toolkit</strong> for any multi-metric report.
 </p>
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>2. Snowflake schemas pay off in DAX simplicity.</strong> Separating Dim_type from Dim_product added one join but eliminated ambiguous many-to-many relationships that would have complicated time-intelligence calculations. The upfront modelling cost saved significant debugging time later.
+<strong>2. Snowflake schemas pay off in DAX simplicity.</strong> Separating <strong>Dim_type</strong> from <strong>Dim_product</strong> added one join but eliminated ambiguous <strong>many-to-many relationships</strong> that would have complicated <strong>time-intelligence calculations</strong>. The upfront modelling cost saved significant debugging time later.
 </p>
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>3. Design language carries analytical credibility.</strong> Choosing a warm, coffee-inspired palette — espresso browns, latte beige, cream neutrals — was not purely aesthetic. Stakeholders responded more positively to a dashboard that felt aligned with the brand context, which smoothed the conversation toward the data insights rather than the tool itself.
+<strong>3. Design language carries analytical credibility.</strong> Choosing a warm, coffee-inspired palette — <strong>espresso browns, latte beige, cream neutrals</strong> — was not purely aesthetic. Stakeholders responded more positively to a dashboard that felt aligned with the <strong>brand context</strong>, which smoothed the conversation toward the data insights rather than the tool itself.
 </p>
 
 ---

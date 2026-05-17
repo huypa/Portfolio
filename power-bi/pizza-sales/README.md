@@ -17,7 +17,7 @@
 ## 1. Quick Introduction
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-This project delivers an end-to-end Power BI analytics solution for a pizza restaurant chain, transforming raw transaction data into actionable operational intelligence. Built for restaurant managers and operations teams, the dashboard surfaces revenue trends, product mix performance, and order efficiency metrics in a single, fully interactive view. The most impressive outcome: a percentile-based order interval analysis (P25–P90) built with DAX window functions that revealed 75% of orders are completed within 16 minutes — a benchmark that directly informed staffing and throughput planning.
+This project delivers an end-to-end Power BI analytics solution for a <strong>pizza restaurant chain</strong>, transforming <strong>raw transaction data</strong> into <strong>actionable operational intelligence</strong>. Built for <strong>restaurant managers and operations teams</strong>, the dashboard surfaces <strong>revenue trends, product mix performance, and order efficiency metrics</strong> in a single, fully interactive view. The most impressive outcome: a <strong>percentile-based order interval analysis (P25–P90)</strong> built with <strong>DAX window functions</strong> that revealed <strong>75% of orders are completed within 16 minutes</strong> — a benchmark that directly informed <strong>staffing and throughput planning</strong>.
 </p>
 
 ---
@@ -25,7 +25,7 @@ This project delivers an end-to-end Power BI analytics solution for a pizza rest
 ## 2. Problem Statement
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-Restaurant managers lacked a consolidated view of what was selling, when revenue peaked, and how efficiently orders moved through the kitchen. Reporting was fragmented across spreadsheets with no dynamic filtering or KPI switching, making it impossible to answer questions like "Which pizza category drives the most revenue on weekdays?" or "What percentage of orders fall outside our target completion window?" Without this visibility, menu decisions, staffing schedules, and promotional strategies were based on intuition rather than data. This dashboard closes that gap by providing a single source of truth that updates from source data and gives managers instant answers across all key performance dimensions.
+Restaurant managers lacked a consolidated view of what was selling, when revenue peaked, and how efficiently orders moved through the kitchen. Reporting was <strong>fragmented across spreadsheets</strong> with no <strong>dynamic filtering or KPI switching</strong>, making it impossible to answer questions like "Which pizza category drives the most revenue on weekdays?" or "What percentage of orders fall outside our target completion window?" Without this visibility, <strong>menu decisions</strong>, <strong>staffing schedules</strong>, and <strong>promotional strategies</strong> were based on intuition rather than data. This dashboard closes that gap by providing a <strong>single source of truth</strong> that updates from source data and gives managers instant answers across all key performance dimensions.
 </p>
 
 ---
@@ -33,7 +33,7 @@ Restaurant managers lacked a consolidated view of what was selling, when revenue
 ## 3. Architecture / Data Flow
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-The solution is built on a snowflake schema in Power BI, with <code>fact_sales</code> as the central fact table connected to four dimension tables. Parameter tables enable dynamic KPI switching without duplicating measures. The data originates from a Kaggle pizza transaction dataset, loaded and transformed via Power Query before being modelled in the semantic layer.
+The solution is built on a <strong>snowflake schema</strong> in Power BI, with <code>fact_sales</code> as the central fact table connected to <strong>four dimension tables</strong>. <strong>Parameter tables</strong> enable <strong>dynamic KPI switching</strong> without duplicating measures. The data originates from a Kaggle pizza transaction dataset, loaded and transformed via <strong>Power Query</strong> before being modelled in the <strong>semantic layer</strong>.
 </p>
 
 ```mermaid
@@ -51,7 +51,7 @@ flowchart LR
 ```
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-The data model screenshot below shows the full relationship map including the parameter tables used for dynamic metric switching.
+The <strong>data model screenshot</strong> below shows the full relationship map including the <strong>parameter tables</strong> used for dynamic metric switching.
 </p>
 
 <div align="center">
@@ -91,7 +91,7 @@ The data model screenshot below shows the full relationship map including the pa
 ## 6. Getting Started
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>Option 1 — Live Dashboard (no installation required):</strong> Click the <a href="https://app.powerbi.com/view?r=eyJrIjoiODkwNzMwOTQtMzVjYi00NjM0LWE0MGMtZWQ0NjE2NTIyZDliIiwidCI6IjMyNGViYTBiLTJjNTUtNDE3NS1iMzBjLThjODNlMzZmMTE2ZCJ9">Live Dashboard</a> link. The report is published publicly via Power BI Service and is fully interactive in any modern browser — no account required. Use the KPI slicer at the top to switch metrics, and the category/month slicers to filter the view.
+<strong>Option 1 — Live Dashboard (no installation required):</strong> Click the <a href="https://app.powerbi.com/view?r=eyJrIjoiODkwNzMwOTQtMzVjYi00NjM0LWE0MGMtZWQ0NjE2NTIyZDliIiwidCI6IjMyNGViYTBiLTJjNTUtNDE3NS1iMzBjLThjODNlMzZmMTE2ZCJ9"><strong>Live Dashboard</strong></a> link. The report is published publicly via <strong>Power BI Service</strong> and is fully interactive in any modern browser — no account required. Use the KPI slicer at the top to switch metrics, and the category/month slicers to filter the view.
 </p>
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
@@ -100,11 +100,11 @@ The data model screenshot below shows the full relationship map including the pa
 
 1. Clone or download this repository.
 2. Open `Pizza_analysis.pbix` in **Power BI Desktop** (free download from Microsoft).
-3. If prompted to refresh data, point the source connection to `data_pizza.xlsx` in the same directory.
+3. If prompted to refresh data, point the source connection to **`data_pizza.xlsx`** in the same directory.
 4. Interact with slicers and visuals directly in the Desktop application.
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>Target audience:</strong> Restaurant managers and operations teams. <strong>Data freshness:</strong> Static snapshot from the Kaggle dataset; refresh the Power Query source to update with new transaction data.
+<strong>Target audience:</strong> <strong>Restaurant managers and operations teams</strong>. <strong>Data freshness:</strong> <strong>Static snapshot</strong> from the Kaggle dataset; refresh the <strong>Power Query source</strong> to update with new transaction data.
 </p>
 
 ---
@@ -135,15 +135,15 @@ The data model screenshot below shows the full relationship map including the pa
 ## 8. Lessons Learned
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>1. DAX window functions unlock analytical depth that pre-aggregated tables cannot match.</strong> Building the percentile-based order interval analysis entirely in DAX — rather than pre-computing it in Power Query — meant the percentile thresholds update dynamically with any slicer selection. This pattern is now a reusable template for any time-based distribution analysis.
+<strong>1. DAX window functions unlock analytical depth that pre-aggregated tables cannot match.</strong> Building the percentile-based order interval analysis entirely in DAX — rather than pre-computing it in Power Query — meant the <strong>percentile thresholds</strong> update dynamically with any <strong>slicer selection</strong>. This pattern is now a reusable template for any <strong>time-based distribution analysis</strong>.
 </p>
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>2. Parameter tables are the cleanest path to a dynamic KPI architecture.</strong> Connecting a single parameter table to all visuals via a disconnected slicer eliminates measure duplication and keeps the model lean. The trade-off is added complexity in measure logic, but the user experience gain is significant — one slicer click repaints the entire report.
+<strong>2. Parameter tables are the cleanest path to a dynamic KPI architecture.</strong> Connecting a single parameter table to all visuals via a <strong>disconnected slicer</strong> eliminates <strong>measure duplication</strong> and keeps the <strong>model lean</strong>. The trade-off is added complexity in <strong>measure logic</strong>, but the user experience gain is significant — one slicer click repaints the entire report.
 </p>
 
 <p style="font-family: 'Montserrat', sans-serif; text-align: justify;">
-<strong>3. Design consistency is as important as analytical accuracy.</strong> Adopting a deliberate palette — tomato red, mozzarella white, basil green — tied the report's visual identity to the business domain and improved stakeholder engagement. Colour-coding KPI cards by performance direction (positive/negative) reduced the time managers needed to interpret results during review sessions.
+<strong>3. Design consistency is as important as analytical accuracy.</strong> Adopting a deliberate palette — <strong>tomato red, mozzarella white, basil green</strong> — tied the report's visual identity to the business domain and improved stakeholder engagement. Colour-coding <strong>KPI cards</strong> by performance direction (positive/negative) reduced the time managers needed to interpret results during review sessions.
 </p>
 
 ---
