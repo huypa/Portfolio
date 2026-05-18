@@ -394,11 +394,16 @@ nav {
   font-family: inherit;
   white-space: nowrap;
   text-decoration: none;
-  transition: background .15s, border-color .15s
+  transition: background .18s, border-color .18s, color .18s
 }
 
 .btn-social:hover { background: var(--border); border-color: var(--border-strong) }
 .btn-social svg { width: 14px; height: 14px; flex-shrink: 0 }
+
+.btn-mail:hover    { background: #EA4335; border-color: #EA4335; color: #fff }
+.btn-linkedin:hover { background: #0077B5; border-color: #0077B5; color: #fff }
+.btn-github:hover  { background: #24292F; border-color: #24292F; color: #fff }
+.btn-book:hover    { background: var(--hl-bg); border-color: #F0D080; color: var(--hl-text) }
 
 /* PROJECTS */
 .projects-section {
