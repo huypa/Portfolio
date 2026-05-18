@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Analytics } from "@vercel/analytics/react";
 import profileImg from "../profile.jpeg";
+import Intro from "./Intro";
 
 // ── FRAMER MOTION SCROLL REVEAL (replaces JS IntersectionObserver) ──
 function Reveal({ children, delay = 0, dir = "up", className = "", style = {} }) {
@@ -529,6 +530,13 @@ function ScrollTop() {
 
 // ── APP ──
 export default function App() {
+  const [showIntro, setShowIntro] = useState(() => !sessionStorage.getItem("intro_seen"));
+
+  const handleEnter = () => {
+    sessionStorage.setItem("intro_seen", "1");
+    setShowIntro(false);
+  };
+
   return (
     <>
       <Nav />
@@ -543,6 +551,9 @@ export default function App() {
       <Contact />
       <ScrollTop />
       <Analytics />
+      <AnimatePresence>
+        {showIntro && <Intro key="intro" onEnter={handleEnter} />}
+      </AnimatePresence>
     </>
   );
 }
