@@ -185,7 +185,7 @@ function Hero() {
       const timer = setInterval(() => {
         setDisplayName(fullName.slice(0, ++i));
         if (i >= fullName.length) clearInterval(timer);
-      }, 68);
+      }, 110);
       return () => clearInterval(timer);
     }, 400);
     return () => clearTimeout(timeout);

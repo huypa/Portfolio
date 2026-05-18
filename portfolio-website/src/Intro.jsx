@@ -1,7 +1,34 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import profileImg from "../profile.jpeg";
 
+const FULL_NAME = "Anh Huy Phung";
+
 export default function Intro({ onEnter }) {
+  const [displayName, setDisplayName] = useState("");
+  const [nameComplete, setNameComplete] = useState(false);
+
+  useEffect(() => {
+    const start = setTimeout(() => {
+      let i = 0;
+      const timer = setInterval(() => {
+        setDisplayName(FULL_NAME.slice(0, ++i));
+        if (i >= FULL_NAME.length) {
+          clearInterval(timer);
+          setNameComplete(true);
+        }
+      }, 110);
+      return () => clearInterval(timer);
+    }, 700);
+    return () => clearTimeout(start);
+  }, []);
+
+  const after = (delay) => ({
+    initial: { opacity: 0, y: 10 },
+    animate: nameComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 },
+    transition: { delay, duration: 0.42, ease: "easeOut" },
+  });
+
   return (
     <motion.div
       className="intro-overlay"
@@ -12,52 +39,38 @@ export default function Intro({ onEnter }) {
     >
       <motion.div
         className="intro-avatar"
-        initial={{ opacity: 0, scale: 0.8 }}
+        initial={{ opacity: 0, scale: 0.85 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
+        transition={{ delay: 0.15, duration: 0.55, ease: "easeOut" }}
       >
         <img src={profileImg} alt="Anh Huy Phung" />
       </motion.div>
 
-      <motion.h1
-        className="intro-name"
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.5, ease: "easeOut" }}
-      >
-        Anh Huy Phung
-      </motion.h1>
+      <h1 className="intro-name">
+        {displayName}
+        {!nameComplete && <span className="intro-cursor">|</span>}
+      </h1>
 
-      <motion.p
-        className="intro-title"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.0, duration: 0.4 }}
-      >
+      <motion.p className="intro-title" {...after(0.05)}>
         Data Scientist · Analytics Engineer
       </motion.p>
 
-      <motion.p
-        className="intro-location"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.3, duration: 0.4 }}
-      >
+      <motion.p className="intro-location" {...after(0.22)}>
         Ho Chi Minh City · Melbourne
       </motion.p>
 
       <motion.div
         className="intro-divider"
         initial={{ width: 0 }}
-        animate={{ width: "100px" }}
-        transition={{ delay: 1.7, duration: 0.45, ease: "easeOut" }}
+        animate={nameComplete ? { width: "80px" } : { width: 0 }}
+        transition={{ delay: 0.45, duration: 0.4, ease: "easeOut" }}
       />
 
       <motion.p
         className="intro-tagline"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.2, duration: 0.6 }}
+        animate={nameComplete ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ delay: 0.9, duration: 0.6 }}
       >
         "ML pipelines by day. Clean dashboards by night."
       </motion.p>
@@ -65,8 +78,8 @@ export default function Intro({ onEnter }) {
       <motion.button
         className="intro-btn"
         initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 3.2, type: "spring", stiffness: 220, damping: 18 }}
+        animate={nameComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+        transition={{ delay: 2.1, type: "spring", stiffness: 220, damping: 18 }}
         whileHover={{ scale: 1.04, borderColor: "#FFF3C4" }}
         whileTap={{ scale: 0.97 }}
         onClick={onEnter}

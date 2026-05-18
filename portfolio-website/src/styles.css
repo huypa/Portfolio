@@ -813,27 +813,35 @@ nav {
 }
 
 .intro-avatar {
-  width: 88px;
-  height: 88px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   overflow: hidden;
   border: 1.5px solid #333;
-  margin-bottom: 20px
+  margin-bottom: 28px
 }
 
 .intro-avatar img { width: 100%; height: 100%; object-fit: cover }
 
 .intro-name {
-  font-size: 32px;
+  font-size: 52px;
   font-weight: 700;
   color: #E8E8E4;
   letter-spacing: -.03em;
-  margin-bottom: 8px
+  margin-bottom: 10px;
+  min-height: 1.1em
 }
 
-.intro-title { font-size: 13px; color: #7A7A74; margin-bottom: 6px }
+.intro-cursor {
+  font-weight: 300;
+  color: #7A7A74;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite
+}
 
-.intro-location { font-size: 11px; color: #555; margin-bottom: 28px }
+.intro-title { font-size: 18px; color: #7A7A74; margin-bottom: 6px }
+
+.intro-location { font-size: 14px; color: #555; margin-bottom: 28px }
 
 .intro-divider { height: 1px; background: #FFF3C4; margin-bottom: 24px }
 
