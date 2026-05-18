@@ -41,27 +41,45 @@ I am an Analytics Engineer & Data Scientist with a Master's degree in Data Scien
 
 ### 1. Text Data Wrangling & NLP Pre-processing
 
-Two independent wrangling pipelines: a regex-only parser for malformed government XML trademark records (no library handles this format), and a full NLP pre-processing pipeline converting multi-channel YouTube comment exports into ML-ready sparse count vectors — covering language detection, emoji removal, stemming, and vocabulary construction. Scored **99/100**.
+- **Pipeline 1 — Regex XML parser:** Custom regex-only parser for malformed government XML trademark records; no existing library handles this quasi-XML format
+- **Pipeline 2 — NLP pre-processing:** Language detection, emoji removal, stemming & vocabulary construction from multi-channel YouTube comment exports
+- **Output:** ML-ready sparse bigram count vectors · **Scored 99/100**
 
 ### 2. Real-Time Fraud Detection (Big Data)
 
-End-to-end pipeline combining PySpark MLlib for batch model training (GBT, **AUC > 0.9**; K-Means fraudster profiling) with a live Kafka–Spark Structured Streaming system that classifies 500–1000 eCommerce transactions every 5 seconds, persists predictions to Parquet, and surfaces real-time fraud dashboards.
+- **Streaming pipeline:** Kafka → Spark Structured Streaming classifying **500–1,000 eCommerce transactions every 5 seconds** with live Parquet persistence
+- **ML models:** GBT classifier for fraud inference (**AUC > 0.9**) · K-Means clustering for fraudster behaviour profiling via PySpark MLlib
+- **Output:** Real-time fraud dashboards tracking hotspots, counts, and product trends across the streaming window
 
 ### 3. Data Warehouse — BigQuery + dbt
 
-Production-grade Kimball dimensional warehouse on BigQuery using a modular 3-layer dbt DAG (staging → dimensional → facts). Delivers 10 conformed dimensions, 7 fact tables, role-playing dimensions, and a full automated test suite covering PK uniqueness, FK integrity, accepted values, and custom business rules — with **100% documentation coverage** via dbt docs.
+- **Model:** Kimball dimensional warehouse on BigQuery — 10 conformed dimensions, 7 fact tables, role-playing dimensions
+- **Pipeline:** Modular 3-layer dbt DAG (staging → dimensional → facts) with **100% documentation coverage** via dbt docs
+- **Quality:** Automated test suite covering PK uniqueness, FK integrity, accepted values, and custom business rules
 
 ### 4. Statistical Machine Learning
 
-Two university assignments built entirely from scratch following scikit-learn conventions: Assignment 1 covers KNN regression, nested cross-validation, Ridge Regression (analytical gradient), and generative vs. discriminative classifiers; Assignment 2 covers Hard/Soft-EM document clustering (log-sum-exp stability), Autoencoder self-taught learning, MLP vs. Perceptron decision boundaries, and PCA visualisation.
+- **Algorithms from scratch:** KNN regression · Ridge Regression (closed-form gradient) · Generative vs. discriminative classifiers
+- **Advanced models:** Hard/Soft-EM document clustering (log-sum-exp stability) · Autoencoder self-taught learning · MLP decision boundaries
+- **Methodology:** Nested cross-validation with learning curves · PCA for high-dimensional visualisation
 
 ### 5. Text Classification & Topic Modelling
 
-Benchmarked 8 classification configurations on arXiv research abstracts — varying input type, algorithm, and dataset scale. Logistic Regression + TF-IDF on full abstracts achieved **87.4% accuracy, F1 0.84**, outperforming RNN by 15 percentage points. Part 2 applied LDA topic modelling across 4 variations (unigrams/bigrams × 1k/20k docs), surfacing coherent research clusters in neural networks, reinforcement learning, and HCI.
+- **Classification:** LR + TF-IDF on arXiv abstracts — **87.4% accuracy, F1 0.84**; outperformed RNN baseline by 15 percentage points
+- **Benchmarking:** 8 configurations across input type (title vs. abstract), algorithm (LR vs. RNN), and dataset scale (1K → 20K docs)
+- **Topic modelling:** LDA over 20K bigram documents — surfaced 4 distinct CS research clusters (neural networks, RL, adversarial attacks, HCI)
 
-### 6 & 7. Power BI Dashboards
+### 6. Power BI — Coffee Shop Dashboard
 
-Two end-to-end Power BI solutions built on snowflake schemas with dynamic DAX measures and parameter-driven KPI switching. The Coffee Shop dashboard (3 NYC locations) showed all KPIs up **+22–23% in March** and identified weekday commuter traffic as the primary revenue driver. The Pizza Sales dashboard revealed consistent **$15K–$17K weekly revenue**, with 75% of orders completed within 16 minutes via percentile analysis using DAX window functions.
+- **Model:** Snowflake schema — Transaction fact table + 4 dimension tables across 3 NYC locations
+- **DAX:** Parameter Table for dynamic KPI switching (Revenue, Quantity, Transactions) · Period-over-period trend line · Store share indicators
+- **Result:** All major KPIs **+22–23% in March** · Identified weekday commuter traffic as the primary revenue driver
+
+### 7. Power BI — Pizza Sales Dashboard
+
+- **DAX:** Window functions for P25/P50/P75/P90 order interval analysis · Time-intelligence measures for weekly revenue trend
+- **Dynamic KPI:** Parameter Table switching across Revenue, Orders, Quantity, AOV, and Avg Pizza/Order on a single page
+- **Result:** Consistent **$15K–$17K weekly revenue** · 75% of orders completed within 16 minutes
 
 ---
 
