@@ -804,7 +804,7 @@ nav {
 .intro-overlay {
   position: fixed;
   inset: 0;
-  background: #0F0F0F;
+  background: #1C1C1E;
   display: flex;
   flex-direction: column;
   align-items: center;
