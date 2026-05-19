@@ -809,7 +809,7 @@ nav {
 .intro-overlay {
   position: fixed;
   inset: 0;
-  background: #1C1C1E;
+  background: linear-gradient(160deg, #2A2A40 0%, #22223A 55%, #1E2038 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -863,15 +863,16 @@ nav {
   align-items: center;
   gap: 8px;
   padding: 11px 28px;
-  background: transparent;
-  color: #E8E8E4;
-  border: 1px solid #444;
+  background: rgba(255, 243, 196, 0.14);
+  color: #FFF3C4;
+  border: 1px solid #FFF3C4;
   border-radius: 8px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   font-family: inherit;
-  transition: border-color .2s, background .2s
+  box-shadow: 0 0 18px rgba(255, 243, 196, 0.18);
+  transition: border-color .2s, background .2s, box-shadow .2s
 }
 
-.intro-btn:hover { border-color: #FFF3C4; background: rgba(255,243,196,.05) }
+.intro-btn:hover { background: rgba(255,243,196,.26); box-shadow: 0 0 28px rgba(255,243,196,.32) }
