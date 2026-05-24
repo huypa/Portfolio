@@ -27,7 +27,7 @@ I am an Analytics Engineer & Data Scientist with a Master's degree in Data Scien
 |:---:|:---|:---|:---|:---:|
 | 1 | Text Data Wrangling & NLP Pre-processing | Python · Regex · NLTK · Pandas | Score **99/100** — parsed quasi-XML trademark records & built NLP count vectors | [README](data-wrangling/README.md) |
 | 2 | Real-Time Fraud Detection (Big Data) | PySpark · Kafka · GBT · K-Means | **AUC > 0.9** — live streaming inference at 500–1000 transactions/5s | [README](big-data-processing/README.md) |
-| 3 | Data Warehouse — BigQuery + dbt | BigQuery · dbt · Kimball | **17+ models** — 10 dims, 7 facts, 100% test & doc coverage | [README](data-warehouse/README.md) |
+| 3 | Wide Wold Importers — BigQuery + dbt | BigQuery · dbt · Kimball | **17+ models** — 10 dims, 7 facts, 100% test & doc coverage | [README](data-warehouse/README.md) |
 | 4 | Statistical Machine Learning | Python · NumPy · PyTorch · scikit-learn | From-scratch KNN, Ridge, EM, Autoencoder — numerically stable, nested CV | [README](machine-learning/README.md) |
 | 5 | Text Classification & Topic Modelling | Scikit-learn · PyTorch · Gensim · spaCy | LR+TF-IDF: **87.4% accuracy, F1 0.84** — outperformed RNN by 15pp | [README](semi-structured-data/README.md) |
 | 6 | Power BI Coffee Shop Dashboard | Power BI · DAX · Snowflake Schema | All KPIs **+22–23% in March** — 3-store NYC live dashboard | [README](power-bi/coffee-shop/README.md) · [Live](https://app.powerbi.com/view?r=eyJrIjoiNDg2NmI3MDYtOGQxYS00M2RmLTk2YWUtNTFmNTk4OGY0ODIxIiwidCI6IjMyNGViYTBiLTJjNTUtNDE3NS1iMzBjLThjODNlMzZmMTE2ZCJ9) |
